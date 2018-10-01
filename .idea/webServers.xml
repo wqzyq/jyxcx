@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="22a7c5ac-cb91-447d-9a7c-201166e2dbe7" name="xhy" url="http://byu4446900001.my3w.com">
+        <fileTransfer host="byu4446900001.my3w.com" port="21" username="byu4446900001">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

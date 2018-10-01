@@ -2,7 +2,7 @@
 <import src="../../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="container">
-<navigator url="../14/test14">页面跳转test14</navigator>
+<navigator url="../14/test14">1111页面跳转test14</navigator>
 <view bindtap="totest">页面跳转test13</view>
 <view bindtap='totest14'>totest14</view>
 <view><button bindtap='getinfo'>获取网站信息</button></view>

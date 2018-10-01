@@ -1,0 +1,5 @@
+<!--pages/13/test13.wxml-->
+<text>pages/13/test13.wxml</text>
+<navigator url="/pages/index/index">回首页</navigator>
+
+<view bindtap="toindex">页面跳转14</view>

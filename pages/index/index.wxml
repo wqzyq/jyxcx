@@ -1,15 +1,14 @@
 <!--index.wxml-->
+<import src="../../template/template.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-<view><button bindtap="butgetinfo">点击我1</button></view>
+<navigator url="../14/test14">页面跳转test14</navigator>
+<view bindtap="totest">页面跳转test13</view>
+<view bindtap='totest14'>totest14</view>
+<view><button bindtap='getinfo'>获取网站信息</button></view>
+
+<block wx:for="{{datas}}" wx:key="unique">
+<view>{{item.name}}</view>
+</block>
+
 </view>
-<view>{{data1}}</view>

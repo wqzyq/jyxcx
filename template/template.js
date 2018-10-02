@@ -4,32 +4,18 @@ function tabbarinit() {
  return [
       { "current":0,
         "pagePath": "/pages/index/index",
-        "iconPath": "/imgs/home.png",
+        "iconPath": "/imgs/home_on.png",
         "selectedIconPath": "/imgs/home_on.png",
         "text": "主页"
       },
       {
         "current": 0,
-        "pagePath": "/pages/news/news",
-        "iconPath": "/imgs/message.png",
-        "selectedIconPath": "/imgs/message_on.png",
-        "text": "资讯"
+        "pagePath": "/pages/my/my",
+        "iconPath": "/imgs/my_on.png",
+        "selectedIconPath": "/imgs/my_on.png",
+        "text": "我的"
 
-      },
-      {
-        "current": 0,
-        "pagePath": "/pages/category/category",
-        "iconPath": "/imgs/category.png",
-        "selectedIconPath": "/imgs/category_on.png",
-        "text": "分类"
-      },
-      {
-        "current": 0,
-        "pagePath": "/pages/buy/buy",
-        "iconPath": "/imgs/buy.png",
-        "selectedIconPath": "/imgs/buy_on.png",
-        "text": "购物"
-      }
+      },      
     ]
 
 }

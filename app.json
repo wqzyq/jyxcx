@@ -2,11 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/12/11111",
-    "pages/11/test",
     "pages/13/test13",
     "pages/14/test14",
-    "pages/news/news"
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",

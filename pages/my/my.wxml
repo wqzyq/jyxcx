@@ -1,4 +1,4 @@
-<!--pages/news/news.wxml-->
+<!--pages/my/my.wxml-->
 <import src="../../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
-<text>pages/news/news.wxml</text>
+<text>pages/my/my.wxml</text>

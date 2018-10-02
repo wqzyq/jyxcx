@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="22a7c5ac-cb91-447d-9a7c-201166e2dbe7" name="xhy" url="http://byu4446900001.my3w.com">
-        <fileTransfer host="byu4446900001.my3w.com" port="21" username="byu4446900001">
+        <fileTransfer host="byu4446900001.my3w.com" port="21" password="dfc2dfd3df9bdf98df99df9edf9fdf9cdf9ddf92" username="byu4446900001">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

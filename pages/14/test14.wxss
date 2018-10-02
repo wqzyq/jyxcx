@@ -6,7 +6,7 @@
 	line-height: 80rpx;}
 .swiper-tab-list{  font-size: 30rpx;
     display: inline-block;
-	width: 33.33%;
+	width: 15%;
 	color: #777777;
 }
 .on{ color: #da7c0c;

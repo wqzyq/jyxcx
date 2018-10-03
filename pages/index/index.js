@@ -6,40 +6,65 @@ var template = require('../../template/template.js');
 Page({
   data: {
     motto: 'Hello World',
-    datas:[],   
-  },
-
-  getinfo:function(res){
-    var datagi = [];
-    var that=this;
-    wx.request({      
-      url: 'https://www.wqpeixun.com',
-      data: {},
-      method: 'POST',       
-      success: function (res) {
-        //console.log(res);
-        for (var i=0;i<res.data.length;i++){
-          datagi.push(res.data[i]);
-        }
-        that.setData({datas:datagi});
+    datas:[], 
+    routers: [
+      {
+        name: '新增',
+        url: '/pages/newadd/newadd',
+        icon: '../../imgs/xinzeng.png',
+        code: '10'
+      },
+      {
+        name: '复核1',
+        url: '/pages/Course/course',
+        icon: '../../imgs/fuhe1.png',
+        code: '11'
+      },
+      {
+        name: '复核2',
+        url: '/pages/Course/course',
+        icon: '../../imgs/fuhe2.png',
+        code: '10'
+      },
+      {
+        name: '选车',
+        icon: '../../imgs/test1.png',
+        code: '11'
+      },
+      {
+        name: '车调',
+        url: '/pages/Course/course',
+        icon: '../../imgs/chediao.png',
+        code: '10'
+      },
+      {
+        name: '发货',
+        icon: '../../imgs/fahuo.png',
+        code: '11'
+      },
+      {
+        name: '执行',
+        url: '/pages/Course/course',
+        icon: '../../imgs/zhixing.png',
+        code: '10'
+      },
+      {
+        name: '收货',
+        icon: '../../imgs/shouhuo.png',
+        code: '11'
+      },
+      {
+        name: '知会',
+        url: '/pages/Course/course',
+        icon: '../../imgs/zhihui.png',
+        code: '10'
       }
-    })
+    ]
+
   },
 
-  totest: function () {   
-    wx.redirectTo({
-      url: '../13/test13',
-    })
-  },
-
-  totest14:function(){
-    wx.navigateTo({
-      url: '../14/test14',
-    })
-  },
-  //获取远端信息
  
- 
+  //获取远端信息  
   onLoad: function () {
     template.tabbar("tabBar", 0, this)//0表示第一个tabbar
   },

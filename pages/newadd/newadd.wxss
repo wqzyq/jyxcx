@@ -1,0 +1,48 @@
+/* pages/newadd/newadd.wxss */
+
+.head {
+  width: 100%;
+  height: 150rpx;
+  background-color: deepskyblue;
+  color: white;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 150rpx;
+  letter-spacing: 10rpx;
+}
+
+.content {
+  margin-top: 10rpx;
+  font-family: "微软雅黑";
+}
+
+.vadd {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.btnadd {
+  font-size: 8prx;
+  line-height: 80rpx;
+  text-align: left;
+  width: 250rpx;
+}
+
+.intadd {
+  font-size: 8prx;
+  width: 300rpx;
+  height: 80rpx;
+  border: 1rpx, black, solid;
+  line-height: 80rpx;
+}
+
+.btnsubmit {
+  margin-top: 10rpx;
+  font-size: 8prx;
+  line-height: 80rpx;
+  text-align: left;
+  width: 250rpx;
+}

@@ -1,14 +1,19 @@
 <!--index.wxml-->
 <import src="../../template/template.wxml"/>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<view class="head">锦昱智能营销管理系统</view>
+
 <view class="container">
-<navigator url="../14/test14">1111页面跳转test14</navigator>
-<view bindtap="totest">页面跳转test13</view>
-<view bindtap='totest14'>totest14</view>
-<view><button bindtap='getinfo'>获取网站信息</button></view>
-
-<block wx:for="{{datas}}" wx:key="unique">
-<view>{{item.name}}</view>
-</block>
-
+    <view class="weui-grids">
+        <view class="weui-grid" wx:for="{{routers}}" wx:key="name">
+            <navigator url="{{item.url+'?name='+item.name+'&code='+item.code}}">
+                <view class='weui-grid__bg'>
+                    <view class="weui-grid__icon">
+                        <image src=" {{item.icon}}" mode="scaleToFill" />
+                    </view>
+                    <text class="weui-grid__label">{{item.name}}</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
 </view>

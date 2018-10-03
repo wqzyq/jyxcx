@@ -1,0 +1,13 @@
+<!--pages/newadd/newadd.wxml-->
+<view class="head">新增单据</view>
+<view class="content">
+  <view class="vadd">
+    <button class='btnadd' type="primary" bindtap=''>新增合同</button>
+    合同编号：
+   <input type='text' class='intadd'></input>
+  </view>
+  <view class='vsubmit'>
+    <button class='btnsubmit' type="default" bindtap=''>提交合同</button>
+  </view>
+
+</view>

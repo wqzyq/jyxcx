@@ -126,7 +126,7 @@
 }
 
 .td {
-  font-size: 28rpx;
+  font-size: 25rpx;
   width: 40%;
   justify-content: center;
   text-align: center;

@@ -19,11 +19,12 @@
   <!--产品显示-->
   <view class="table">
     <view class="tr bg-w">
-      <view class="th">产品名称</view>
-      <view class="th">规格型号</view>
+      <view class="th">产品</view>
+      <view class="th">规格</view>
       <view class="th ">数量</view>
       <view class="th ">单价</view>
       <view class="th ">金额</view>
+     
     </view>
     <block wx:for="{{listData}}" wx:key="{{PrName}}">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
@@ -32,6 +33,7 @@
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
+       
       </view>
       <view class="tr" wx:else>
         <view class="td">{{item.PrName}}</view>
@@ -39,6 +41,7 @@
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
+      
       </view>
     </block>
   </view>
@@ -60,7 +63,7 @@
         <block wx:for="{{selProData}}" wx:key="{{PrName}}">
           <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
             <view class="td">
-              <checkbox-group bindchange="chkChange">
+            <checkbox-group bindchange="chkChange" data-id="{{item.id}}" data-slid="{{item.slid}}" data-djid="{{item.djid}}" data-price="{{item.price}}">
                 <checkbox color='#EF6568' class='chb' />
               </checkbox-group>
             </view>
@@ -71,7 +74,7 @@
               <text>{{item.Model}}</text>
             </view>
             <view class="td">
-              <input class='txtPro' value="{{prInput}}" placeholder="数量"></input>
+              <input class='txtPro' value="{{prInput}}" data-slid="{{item.slid}}" data-price="{{item.price}}" bindinput='slinput' placeholder="数量"></input>
             </view>
             <view class="td">
               <input class='txtPro' value="{{prInput}}" placeholder="单价"></input>
@@ -79,7 +82,7 @@
           </view>
           <view class="tr" wx:else>
             <view class="td">
-              <checkbox-group bindchange="chkChange">
+              <checkbox-group bindchange="chkChange" data-id="{{item.id}}" data-slid="{{item.slid}}" data-djid="{{item.djid}}">
                 <checkbox color='#EF6568' class='chb' />
               </checkbox-group>
             </view>
@@ -97,7 +100,7 @@
             </view>
           </view>
         </block>
-         <button type="primary" class='btnSelPro' bindtap='btnAdd'>选择产品</button>
+        <button type="primary" class='btnSelPro' bindtap='btnAdd'>选择产品</button>
       </swiper-item>
 
       <!-- 12D-X系列 -->

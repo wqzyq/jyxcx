@@ -9,6 +9,7 @@ Page({
     htInput: '',
     prInput: '',
     khInput: '',
+    Remarks:'',
     winWidth: 0,
     winHeight: 0,
     selProData: [],
@@ -16,14 +17,14 @@ Page({
     // tab切换
     currentTab: 0,
     listData: [{
-        "PrName": "甲基烯丙醇聚氧乙烯醚（固体）",
-        "Model": "规格11",
+      "PrName": "改性醇胺",
+        "Model": "规格10",
         "Number": "100",
         "price": "5000",
         "Money": "50000"
       },
       {
-        "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+        "PrName": "复性醇胺",
         "Model": "规格11",
         "Number": "100",
         "price": "5000",
@@ -45,21 +46,21 @@ Page({
       "id": 2,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+      "PrName": "改性醇胺",
       "Model": "规格10",
       "price": 2500,
     }, {
       "id": 2,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+        "PrName": "复性醇胺",
       "Model": "规格11",
       "price": 2500,
     }, {
       "id": 3,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+        "PrName": "复性醇胺",
       "Model": "规格12",
       "price": 2600,
     }, ]
@@ -103,29 +104,29 @@ Page({
       "id": 10,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+      "PrName": "改性醇胺",
       "Model": "规格11",
       "price": 2000,
     }, {
       "id": 2,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+        "PrName": "改性醇胺",
       "Model": "规格12",
       "price": 2500,
     }, {
       "id": 3,
       "slid": 11,
       "djid": 12,
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）",
+        "PrName": "复性醇胺",
       "Model": "规格12",
       "price": 2600,
     }, ];
     var proData1 = [{
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）1",
+      "PrName": "改性醇胺",
       "Model": "规格11"
     }, {
-      "PrName": "甲基烯丙醇聚氧乙烯醚（液体）1",
+        "PrName": "复性醇胺",
       "Model": "规格12"
     }];
     that.setData({

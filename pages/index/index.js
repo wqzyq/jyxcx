@@ -16,7 +16,7 @@ Page({
       },
       {
         name: '复核1',
-        url: '/pages/Course/course',
+        url: '/pages/check1/check1',
         icon: '../../imgs/fuhe1.png',
         code: '11'
       },

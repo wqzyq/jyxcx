@@ -22,6 +22,7 @@
 }
 
 .vadd {
+  margin-left: 50rpx;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -44,7 +45,7 @@
   border: solid, black, 1rpx;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 25rpx;
+  font-size: 28rpx;
 }
 
 .txtkh {
@@ -75,41 +76,7 @@
   text-align: center;
 }
 
-/*产品选择版块*/
 
-.swiper-tab {
-  width: 100%;
-  border-bottom: 2rpx solid #777;
-  text-align: center;
-  line-height: 80rpx;
-}
-
-.swiper-tab-list {
-  font-size: 30rpx;
-  display: inline-block;
-  width: 20%;
-  color: #777;
-  font-weight: bold;
-}
-
-.on {
-  color: #da7c0c;
-  border-bottom: 5rpx solid #da7c0c;
-}
-
-.swiper-box {
-  display: block;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.switem {
- display: flex;
- flex-direction: row;
-  text-align: left;
-  font-size: 22rpx;
-}
 
 /*表格设置*/
 
@@ -160,4 +127,20 @@
 }
 .btnSelPro{
   margin-top: 25rpx;
+}
+/*radio设置*/
+.radio-group{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.radio{
+  margin-left: 90rpx;
+  font-size: 32rpx;
+}
+
+/*收款信息*/
+.txtsh{
+  margin-top: 15rpx;
+  font-family: "微软雅黑";
+  font-size: 28rpx;
 }

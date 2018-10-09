@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/newadd/newadd",
     "pages/index/index",
+    "pages/check1/check1",
+    "pages/newadd/newadd",
     "pages/logs/logs",
     "pages/13/test13",
     "pages/14/test14",

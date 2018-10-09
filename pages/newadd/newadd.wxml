@@ -1,18 +1,21 @@
 <!--pages/newadd/newadd.wxml-->
-<view class="head">新增单据</view>
+<view class="head">发起流程1</view>
 <view class="content">
   <view class="vadd">
     <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
     <button class='vbtn' type="warn" bindtap='btnCancel'>作废</button>
   </view>
-
   <view class='txtinput'>
     <input class='txtHTPH' value="{{htInput}}" placeholder="请输入合同编号"></input>
     <view class='line'></view>
   </view>
   <view class='txtkh'>
     <input class='txtKHName' type='text' value="{{khInput}}" placeholder="客户名称"></input>
+  </view>
+  <view class='line'></view>
+  <view class='txtkh'>
+    <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
   </view>
   <view class='line'></view>
 
@@ -24,7 +27,7 @@
       <view class="th ">数量</view>
       <view class="th ">单价</view>
       <view class="th ">金额</view>
-     
+
     </view>
     <block wx:for="{{listData}}" wx:key="{{PrName}}">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
@@ -33,7 +36,7 @@
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
-       
+
       </view>
       <view class="tr" wx:else>
         <view class="td">{{item.PrName}}</view>
@@ -41,7 +44,7 @@
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
-      
+
       </view>
     </block>
   </view>
@@ -63,7 +66,7 @@
         <block wx:for="{{selProData}}" wx:key="{{PrName}}">
           <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
             <view class="td">
-            <checkbox-group bindchange="chkChange" data-id="{{item.id}}" data-slid="{{item.slid}}" data-djid="{{item.djid}}" data-price="{{item.price}}">
+              <checkbox-group bindchange="chkChange" data-id="{{item.id}}" data-slid="{{item.slid}}" data-djid="{{item.djid}}" data-price="{{item.price}}">
                 <checkbox color='#EF6568' class='chb' />
               </checkbox-group>
             </view>

@@ -134,8 +134,8 @@
   margin-bottom: 30rpx;
 }
 .radio{
-  margin-left: 90rpx;
-  font-size: 32rpx;
+  margin-left: 15rpx;
+  font-size: 25rpx;
 }
 
 /*收款信息*/

@@ -1,0 +1,96 @@
+<!--pages/newadd/newadd.wxml-->
+<view class="head">车辆调试－流程五</view>
+<view class="content"></view>
+<view class="vadd">
+  <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
+  <button class='vbtn' type="warn" bindtap='btnCancel'>撤回</button>
+</view>
+<view class='txtsh'>
+  <text>合同编号：</text>
+  <text>20181001001</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>客户名称：</text>
+  <text>厦门海立德新材料有限公司</text>
+</view>
+<view class='line'></view>
+<!--收款信息-->
+<view class='txtsh'>
+  <text>收货人：</text>
+  <text>张小锋</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>收货地址：</text>
+  <text>厦门市沿江路188号</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>收货人电话：</text>
+  <text>13877779999</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>物流公司：</text>
+  <text>茂名市长洲物流有限公司</text>
+</view>
+<view class='line'></view>
+<!--车辆号码-->
+<view class='txtsh'>
+  <text>车牌号码：</text>
+  <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{Plates}}">
+      <view class="picker">
+        {{Plates[index]}}
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='line'></view>
+<!--司机-->
+<view class='txtsh'>
+  <text>司机姓名：</text>
+  <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{Drivers}}">
+      <view class="picker">
+        {{Drivers[index]}}
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>司机电话：</text>
+  <text>13888889999</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <text>司机身份证：</text>
+  <text>440902199010110012</text>
+</view>
+<view class='line'></view>
+<view class='txtsh'>
+  <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
+</view>
+<!--产品显示-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">产品</view>
+    <view class="th">规格</view>
+    <view class="th ">数量</view>  
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{PrName}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view class="td">{{item.Number}}</view>     
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view class="td">{{item.Number}}</view>    
+    </view>
+  </block>
+</view>
+<view class='line'></view>

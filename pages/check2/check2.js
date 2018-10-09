@@ -12,9 +12,7 @@ Page({
     winWidth: 0,
     winHeight: 0,
     selProData: [],
-    sla: "",
-
-    array: ['麦娴', '张颖', '程可红', '秦丹','刘薇'],
+    sla: "",  
     index: 0,
 
     // tab切换

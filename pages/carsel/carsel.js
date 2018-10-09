@@ -12,11 +12,9 @@ Page({
     winWidth: 0,
     winHeight: 0,
     selProData: [],
-    sla: "",
-
-    array: ['麦娴', '张颖', '程可红', '秦丹','刘薇'],
+    sla: "",  
     index: 0,
-
+    logistics: ['茂名市长洲物流有限公司', '海南茂捷物流有限公司', '茂名市交投集团物流中心'],
     // tab切换
     currentTab: 0,
     listData: [{
@@ -35,17 +33,25 @@ Page({
       },
     ],
     items: [{
-        name: 'paid',
-        value: '已付',
+        name: 'item0',
+      value: '槽罐车',
         checked: 'true'
       },
       {
-        name: 'unpaid',
-        value: '未付',
+        name: 'item1',
+        value: '平扳车',
       },
       {
-        name: 'partpaid',
-        value: '部分付'
+        name: 'item2',
+        value: '箱体车'
+      },
+      {
+        name: 'item3',
+        value: '普通货车'
+      },
+      {
+        name: 'item4',
+        value: '箱体车'
       },
 
     ],

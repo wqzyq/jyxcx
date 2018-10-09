@@ -1,5 +1,5 @@
 <!--pages/newadd/newadd.wxml-->
-<view class="head">复核流程1</view>
+<view class="head">车辆选择－流程四</view>
 <view class="content">
   <view class="vadd">
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
@@ -7,13 +7,7 @@
   </view>
   <view class='txtsh'>
     <text>销售代表：</text>
-   <view class="section">  
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <view class="picker">
-             {{array[index]}}
-        </view>
-    </picker>
-</view>
+   <text>麦娴</text>
   </view>
   <view class='line'></view>
   <view class='txtsh'>
@@ -43,10 +37,26 @@
   </view>
   <view class='line'></view>
   <view class='txtsh'>
-    <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
+    <text>物流公司：</text>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{logistics}}">
+        <view class="picker">
+          {{logistics[index]}}
+        </view>
+      </picker>
+    </view>
   </view>
   <view class='line'></view>
-
+  <!--车辆情况-->
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <view class='line'></view>
+  <view class='txtsh'>
+    <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
+  </view>
   <!--产品显示-->
   <view class="table">
     <view class="tr bg-w">
@@ -74,13 +84,5 @@
     </block>
   </view>
   <view class='line'></view>
-  <!--货款情况-->
-  <radio-group class="radio-group" bindchange="radioChange">
-    <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
-      <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-    </label>
-  </radio-group>
-  <view class='line'></view>
-
 
 </view>

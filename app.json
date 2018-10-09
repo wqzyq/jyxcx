@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/cardebug/cardebug",
+    "pages/carsel/carsel",
+    "pages/check2/check2",
     "pages/check1/check1",
+    "pages/index/index",
     "pages/newadd/newadd",
     "pages/logs/logs",
     "pages/13/test13",

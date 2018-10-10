@@ -6,6 +6,7 @@
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
     <button class='vbtn' type="warn" bindtap='btnCancel'>作废</button>
   </view>
+  
   <view class='txtinput'>
     <input class='txtHTPH' value="{{htInput}}" placeholder="请输入合同编号"></input>
     <view class='line'></view>

@@ -1,1 +1,11 @@
 /* pages/13/test13.wxss */
+.ccb{
+  display: flex;
+  flex-direction: row;
+}
+.ccbg{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+

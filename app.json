@@ -1,5 +1,7 @@
 {
-  "pages": [
+"pages" :[
+    "pages/13/test13",
+    "pages/newadd/newadd",
     "pages/index/index",
     "pages/notify/notify",
     "pages/confirm/confirm",
@@ -8,9 +10,7 @@
     "pages/check1/check1",
     "pages/cardebug/cardebug",
     "pages/carsel/carsel",
-    "pages/newadd/newadd",
     "pages/logs/logs",
-    "pages/13/test13",
     "pages/14/test14",
     "pages/my/my"
   ],

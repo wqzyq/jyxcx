@@ -51,7 +51,7 @@
 .txtkh {
   display: flex;
   flex-direction: row;
-  font-size: 25rpx;
+  font-size: 30rpx;
 }
 
 .line {
@@ -142,7 +142,7 @@
 .txtsh{
   margin-top: 15rpx;
   font-family: "微软雅黑";
-  font-size: 28rpx;
+  font-size: 30rpx;
   display: flex;
   flex-direction: row;
 }

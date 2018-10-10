@@ -9,6 +9,12 @@
     <text>销售代表：</text>
     <text>麦娴</text>
   </view>
+
+  <view class='line'></view>
+  <view class='txtsh'>
+    <text>发货班组：</text>
+    <text>装置班组</text>
+    </view>
 <view class='line'></view>
 <view class='txtsh'>
   <text>合同编号：</text>
@@ -19,12 +25,8 @@
   <text>客户名称：</text>
   <text>厦门海立德新材料有限公司</text>
 </view>
-<view class='line'></view>
+
 <!--收款信息-->
-<view class='txtsh'>
-  <text>收货人：</text>
-  <text>张小锋</text>
-</view>
 <view class='line'></view>
 <view class='txtsh'>
   <text>收货地址：</text>
@@ -32,9 +34,22 @@
 </view>
 <view class='line'></view>
 <view class='txtsh'>
+  <text>收货人：</text>
+  <text>张小锋</text>
+</view>
+
+<view class='line'></view>
+<view class='txtsh'>
   <text>收货人电话：</text>
   <text>13877779999</text>
 </view>
+<view class='line'></view>
+<!--货款情况-->
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</radio-group>
 <view class='line'></view>
 <view class='txtsh'>
   <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
@@ -67,13 +82,7 @@
     </view>
   </block>
 </view>
-<view class='line'></view>
-<!--货款情况-->
-<radio-group class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
-    <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-  </label>
-</radio-group>
+
 <view class='line'></view>
 
 

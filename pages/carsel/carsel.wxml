@@ -1,5 +1,5 @@
 <!--pages/newadd/newadd.wxml-->
-<view class="head">车辆选择－流程四</view>
+<view class="head">车辆选择流程</view>
 <view class="content">
   <view class="vadd">
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>

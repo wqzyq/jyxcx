@@ -22,40 +22,43 @@ Page({
       },
       {
         name: '复核2',
-        url: '/pages/Course/course',
+        url: '/pages/check2/check2',
         icon: '../../imgs/fuhe2.png',
         code: '10'
       },
       {
         name: '选车',
+        url: '/pages/carsel/carsel',
         icon: '../../imgs/test1.png',
         code: '11'
       },
       {
         name: '车调',
-        url: '/pages/Course/course',
+        url: '/pages/cardebug/cardebug',
         icon: '../../imgs/chediao.png',
         code: '10'
       },
       {
         name: '发货',
+        url: '/pages/send/send',
         icon: '../../imgs/fahuo.png',
         code: '11'
       },
       {
         name: '执行',
-        url: '/pages/Course/course',
+        url: '/pages/send/send',
         icon: '../../imgs/zhixing.png',
         code: '10'
       },
       {
         name: '收货',
+        url: '/pages/confirm/confirm',
         icon: '../../imgs/shouhuo.png',
         code: '11'
       },
       {
         name: '知会',
-        url: '/pages/Course/course',
+        url: '/pages/notify/notify',
         icon: '../../imgs/zhihui.png',
         code: '10'
       }

@@ -12,7 +12,7 @@
 }
 
 .chb {
-  height: 5rpx; 
+  height: 5rpx;
   font-size: 5rpx;
 }
 
@@ -28,7 +28,7 @@
   width: 100%;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 30prx;
+  font-size: 25prx;
 }
 
 .vbtn {
@@ -45,13 +45,13 @@
   border: solid, black, 1rpx;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 .txtkh {
   display: flex;
   flex-direction: row;
-  font-size: 30rpx;
+  font-size: 25rpx;
 }
 
 .line {
@@ -76,13 +76,12 @@
   text-align: center;
 }
 
-
-
 /*表格设置*/
 
 .table {
   margin-top: 15rpx;
   border: 0px solid darkgray;
+  text-align: center;
 }
 
 .tr {
@@ -93,23 +92,8 @@
   align-items: center;
 }
 
-.td {
-  font-size: 25rpx;
-  width: 40%;
-  justify-content: center;
-  text-align: center;
-}
-
-.bg-w {
-  background: snow;
-}
-
-.bg-g {
-  background: #e6f3f9;
-}
-
 .th {
-  width: 40%;
+  width: 25%;
   justify-content: center;
   background: #36f;
   color: #fff;
@@ -119,30 +103,55 @@
   font-size: 28rpx;
   font-weight: bold;
 }
-.txtPro{
+
+.td {
   margin-left: 10rpx;
-   display: flex;
+  font-size: 25rpx;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-w {
+  background: snow;
+  text-align: center;
+}
+
+.bg-g {
+  background: #e6f3f9;
+  text-align: center;
+}
+
+.txtPro {
+  margin-left: 10rpx;
+  display: flex;
   flex-direction: row;
   font-size: 28rpx;
+  text-align: center;
 }
-.btnSelPro{
+
+.btnSelPro {
   margin-top: 25rpx;
 }
+
 /*radio设置*/
-.radio-group{
+
+.radio-group {
   margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
-.radio{
-  margin-left: 90rpx;
-  font-size: 30rpx;
+
+.radio {
+  margin-left: 15rpx;
+  font-size: 25rpx;
 }
 
 /*收款信息*/
-.txtsh{
+
+.txtsh {
   margin-top: 15rpx;
   font-family: "微软雅黑";
-  font-size: 28rpx;
+  font-size: 30rpx;
   display: flex;
   flex-direction: row;
 }

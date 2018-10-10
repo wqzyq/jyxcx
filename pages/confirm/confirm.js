@@ -12,9 +12,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     selProData: [],
-    sla: "",  
-    index: 0,
-    
+    sla: "", 
+    index: 0,  
     // tab切换
     currentTab: 0,
     listData: [{
@@ -32,21 +31,8 @@ Page({
         "Money": "50000"
       },
     ],
-    items: [{
-        name: 'paid',
-        value: '已付',
-        checked: 'true'
-      },
-      {
-        name: 'unpaid',
-        value: '未付',
-      },
-      {
-        name: 'partpaid',
-        value: '部分付'
-      },
-
-    ],
+    Drivers:  ['张三', '李四', '陈五'],
+    Plates: ['粤K12345', '粤A11122', '粤B22233']
 
   },
 

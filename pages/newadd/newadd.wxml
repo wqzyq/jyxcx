@@ -1,5 +1,5 @@
 <!--pages/newadd/newadd.wxml-->
-<view class="head">发起流程1</view>
+<view class="head">发起流程</view>
 <view class="content">
   <view class="vadd">
     <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
@@ -77,10 +77,10 @@
               <text>{{item.Model}}</text>
             </view>
             <view class="td">
-              <input class='txtPro' value="{{prInput}}" data-slid="{{item.slid}}" data-price="{{item.price}}" bindinput='slinput' placeholder="数量"></input>
+              <input class='txtPro' type="digit" value="{{prInput}}" data-slid="{{item.slid}}" data-price="{{item.price}}" bindinput='slinput' placeholder="数量"></input>
             </view>
             <view class="td">
-              <input class='txtPro' value="{{prInput}}" placeholder="单价"></input>
+              <input class='txtPro'  type="digit" value="{{prInput}}" placeholder="单价"></input>
             </view>
           </view>
           <view class="tr" wx:else>
@@ -96,10 +96,10 @@
               <text>{{item.Model}}</text>
             </view>
             <view class="td">
-              <input class='txtPro' value="{{prInput}}" placeholder="数量"></input>
+              <input class='txtPro' type="digit" value="{{prInput}}" placeholder="数量"></input>
             </view>
             <view class="td">
-              <input class='txtPro' value="{{prInput}}" placeholder="单价"></input>
+              <input class='txtPro' type="digit" value="{{prInput}}" placeholder="单价"></input>
             </view>
           </view>
         </block>

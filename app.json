@@ -1,8 +1,8 @@
 {
 "pages" :[
+    "pages/index/index",
     "pages/13/test13",
     "pages/newadd/newadd",
-    "pages/index/index",
     "pages/notify/notify",
     "pages/confirm/confirm",
     "pages/send/send",

@@ -1,15 +1,48 @@
 <!--pages/13/test13.wxml-->
 <text>pages/13/test13.wxml</text>
 <navigator url="/pages/index/index">回首页</navigator>
-
 <view bindtap="toindex">页面跳转14</view>
 
-<view class='ccb'>
-<checkbox-group class="ccbg" bindchange="chkChange" data-id="1" data-name="汽油" data-gg="95#" data-sl="0" data-dj="0">
-  <checkbox color='#EF6568' class='chb' />
-  <view>汽油</view>
-  <view>95#</view>
-  <input placeholder='数量' data-sl1="1"></input>
-  <input placeholder='单价' data-dj1="1"></input>
-</checkbox-group>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class='ccb'>
+    <checkbox-group class="ccbg" bindchange="chkChange" data-id="1" data-name="汽油" data-gg="97#" data-sl="0" data-dj="0">
+      <checkbox color='#EF6568' class='chb' />
+      <text name="n01" value="汽油" disabled='false'     >汽油</text>      
+      <input name="g01" value="95#" disabled='false'     ></input>     
+     
+      <input placeholder='数量' name="a{{da01}}" data-sl1="1"></input>
+      <input placeholder='单价'  name="a02" data-dj1="1"></input>
+    </checkbox-group>
+  </view>
+  <view class='ccb'>
+    <checkbox-group class="ccbg" bindchange="chkChange" data-id="2" data-name="柴油" data-gg="0#" data-sl="0" data-dj="0">
+      <checkbox color='#EF6568' class='chb' />
+      <view name="n02">柴油</view>
+      <view name="g02">0#</view>
+      <input placeholder='数量' data-id="2" name="a03" data-sl1="1"></input>
+      <input placeholder='单价' name="a04" data-dj1="1"></input>
+    </checkbox-group>
+  </view>
+   <view class='ccb'>
+    <checkbox-group class="ccbg" bindchange="chkChange" data-id="3" data-name="非标汽油" data-gg="1#" data-sl="0" data-dj="0">
+      <checkbox color='#EF6568' class='chb' />
+      <view name="n02">非标汽油</view>
+      <view name="g02">90#</view>
+      <input placeholder='数量' data-id="2" name="a03" data-sl1="1"></input>
+      <input placeholder='单价' name="a04" data-dj1="1"></input>
+    </checkbox-group>
+  </view>
+  <button formType="submit">提交</button>
+  <button formType="reset">清空</button>
+  </form>
+  <block wx:for="{{bb}}" wx:key="{{unique}}">
+  <text>{{item}}</text>
+  </block>
+<view wx:for="{{arr1}}" wx:key="{{unique}}">
+ <text>{{item.id}}</text>
+ <text>{{item.name}}</text>
+ <text>{{item.gg}}</text>
+ <input placeholder='数量'></input>
+ <input placeholder='单价'></input>
 </view>
+ 

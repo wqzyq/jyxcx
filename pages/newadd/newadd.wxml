@@ -6,7 +6,7 @@
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
     <button class='vbtn' type="warn" bindtap='btnCancel'>作废</button>
   </view>
-  
+
   <view class='txtinput'>
     <input class='txtHTPH' value="{{htInput}}" placeholder="请输入合同编号"></input>
     <view class='line'></view>
@@ -28,16 +28,14 @@
       <view class="th ">数量</view>
       <view class="th ">单价</view>
       <view class="th ">金额</view>
-
     </view>
-    <block wx:for="{{listData}}" wx:key="{{PrName}}">
+    <block wx:for="{{listData}}" wx:key="{{unique}}">
       <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
         <view class="td">{{item.PrName}}</view>
         <view class="td">{{item.Model}}</view>
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
-
       </view>
       <view class="tr" wx:else>
         <view class="td">{{item.PrName}}</view>
@@ -45,7 +43,6 @@
         <view class="td">{{item.Number}}</view>
         <view class="td">{{item.price}}</view>
         <view class="td">{{item.Money}}</view>
-
       </view>
     </block>
   </view>
@@ -77,12 +74,7 @@
             <view class="td">
               <text>{{item.Model}}</text>
             </view>
-            <view class="td">
-              <input class='txtPro' type="digit" value="{{prInput}}" data-slid="{{item.slid}}" data-price="{{item.price}}" bindinput='slinput' placeholder="数量"></input>
-            </view>
-            <view class="td">
-              <input class='txtPro'  type="digit" value="{{prInput}}" placeholder="单价"></input>
-            </view>
+
           </view>
           <view class="tr" wx:else>
             <view class="td">
@@ -95,12 +87,6 @@
             </view>
             <view class="td">
               <text>{{item.Model}}</text>
-            </view>
-            <view class="td">
-              <input class='txtPro' type="digit" value="{{prInput}}" placeholder="数量"></input>
-            </view>
-            <view class="td">
-              <input class='txtPro' type="digit" value="{{prInput}}" placeholder="单价"></input>
             </view>
           </view>
         </block>

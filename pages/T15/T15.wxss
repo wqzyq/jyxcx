@@ -1,0 +1,63 @@
+/* pages/T15/T15.wxss */
+
+/*表格设置*/
+
+.table {
+  margin-top: 15rpx;
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  font-size: 25rpx;
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.txtPro{
+  margin-left: 10rpx;
+   display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+}
+.btnSelPro{
+  margin-top: 25rpx;
+}
+
+.txtsh{
+  margin-top: 15rpx;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+.v1{
+  height: 100rpx;
+}

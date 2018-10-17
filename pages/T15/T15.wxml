@@ -1,0 +1,32 @@
+<!--pages/T15/T15.wxml-->
+<text>pages/T15/T15.wxml</text>
+
+<!--产品选择-->
+<view class='txtsh'>
+  <text>产品名称：</text>
+  <view class="section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{cps}}">
+      <view class="picker">
+        {{cps[index]}}
+      </view>
+    </picker>
+  </view>
+</view>
+<button bindtap='btntest'>测试</button>
+<view class='v1'></view>
+<block wx:for="{{listData}}" wx:key="{{PrName}}">
+  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+    <view class="td">{{item.PrName}}</view>
+    <view class="td">{{item.Model}}</view>
+    <view class="td"><input value='0'></input></view>
+    <view class="td"><input value='0'></input></view>
+    <view class="td"><input value='0'></input></view>
+  </view>
+  <view class="tr" wx:else>
+    <view class="td">{{item.PrName}}</view>
+    <view class="td">{{item.Model}}</view>
+    <view class="td"><input value='0'></input></view>
+    <view class="td"><input value='0'></input></view>
+    <view class="td"><input value='0'></input></view>
+  </view>
+</block>

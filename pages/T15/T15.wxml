@@ -1,5 +1,5 @@
 <!--pages/T15/T15.wxml-->
-<text>pages/T15/T15.wxml</text>
+<text>picker的增加与删除（T15.wxml）</text>
 
 <!--产品选择-->
 <view class='txtsh'>
@@ -12,21 +12,23 @@
     </picker>
   </view>
 </view>
-<button bindtap='btntest'>测试</button>
+<button bindtap='btntest'>增加产品</button>
 <view class='v1'></view>
 <block wx:for="{{listData}}" wx:key="{{PrName}}">
   <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
     <view class="td">{{item.PrName}}</view>
     <view class="td">{{item.Model}}</view>
+    <view class="td"><input  name='sl{{index}}' value='0'></input></view>
+    <view class="td"><input value='0' name='dj{{index}}'></input></view>
     <view class="td"><input value='0'></input></view>
-    <view class="td"><input value='0'></input></view>
-    <view class="td"><input value='0'></input></view>
+    <view><text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text></view>
   </view>
   <view class="tr" wx:else>
     <view class="td">{{item.PrName}}</view>
     <view class="td">{{item.Model}}</view>
+    <view class="td"><input  name='sl{{index}}' value='0'></input></view>
+    <view class="td"><input value='0' name='dj{{index}}'></input></view>
     <view class="td"><input value='0'></input></view>
-    <view class="td"><input value='0'></input></view>
-    <view class="td"><input value='0'></input></view>
+    <view><text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text></view>
   </view>
 </block>

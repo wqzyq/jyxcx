@@ -18,32 +18,38 @@ Page({
     ]
   },
 
-  btntest: function() {
-    //console.log('hello');
-
+  //增加产品
+  btntest: function(e) {
+    let cps = this.data.cps;
     let list = this.data.listData;
+    let index = this.data.index;
     list.push({
-      prName: "复性醇胺4",
-      Model: "规格4"
+      prName: cps[index],
+      Model: cps[index],
     });
     this.setData({
       listData: list
     })
-    //console.log(listData);
+  },
+  //删除选项
+  deleteIitems(e) {
+    let idx = e.currentTarget.dataset.idx
+    let list = this.data.listData
+    let filterRes = list.filter((ele, index) => {
+      return index != idx
+    })
+    this.setData({
+      listData: filterRes
+    })
   },
 
+  //改变Picker获得选择的index
   bindPickerChange: function(e) {
-    console.log(e);
-    let cps = this.data.cps;
-    let index;
-    let ldaAdd;
+    let index = this.data.index;
     this.setData({
       index: e.detail.value
     })
     index = this.data.index;
-    ldAdd.push(cps(index));
-    console.log(ldaAdd);
-    console.log(cps[index]);
   },
 
 

@@ -1,34 +1,60 @@
 <!--pages/T15/T15.wxml-->
 <text>picker的增加与删除（T15.wxml）</text>
-
-<!--产品选择-->
-<view class='txtsh'>
-  <text>产品名称：</text>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <button formType="submit">Submit</button>
+  <button formType="reset">Reset</button>
+  <view class='v1'></view>
+  <!--文本框输入内容-->
   <view class="section">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{cps}}">
-      <view class="picker">
-        {{cps[index]}}
+    <input name="kename" placeholder="客户名称" />
+    <input name="htph" placeholder="合同编号" />
+    <input name="bz" placeholder="备注" />
+  </view>
+  <!--产品选择-->
+  <view class='txtsh'>
+    <text>产品名称：</text>
+    <view class="section">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{cps}}">
+        <view class="picker">
+          {{cps[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <button bindtap='btntest'>增加产品</button>
+  <view class='v1'></view>
+  <block wx:for="{{listData}}" wx:key="{{PrName}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view class="td">
+        <input name='sl{{item.id}}' value='0'></input>
       </view>
-    </picker>
-  </view>
-</view>
-<button bindtap='btntest'>增加产品</button>
-<view class='v1'></view>
-<block wx:for="{{listData}}" wx:key="{{PrName}}">
-  <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-    <view class="td">{{item.PrName}}</view>
-    <view class="td">{{item.Model}}</view>
-    <view class="td"><input  name='sl{{index}}' value='0'></input></view>
-    <view class="td"><input value='0' name='dj{{index}}'></input></view>
-    <view class="td"><input value='0'></input></view>
-    <view><text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text></view>
-  </view>
-  <view class="tr" wx:else>
-    <view class="td">{{item.PrName}}</view>
-    <view class="td">{{item.Model}}</view>
-    <view class="td"><input  name='sl{{index}}' value='0'></input></view>
-    <view class="td"><input value='0' name='dj{{index}}'></input></view>
-    <view class="td"><input value='0'></input></view>
-    <view><text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text></view>
-  </view>
-</block>
+      <view class="td">
+        <input value='0' name='dj{{item.id}}'></input>
+      </view>
+      <view class="td">
+        <input value='0' name='je{{item.id}}'></input>
+      </view>
+      <view>
+        <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
+      </view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view>
+        <input name='sl{{item.id}}' value='0'></input>
+      </view>
+      <view class="td">
+        <input value='0' name='dj{{item.id}}'></input>
+      </view>
+      <view class="td">
+        <input value='0' name='je{{item.id}}'></input>
+      </view>
+      <view>
+        <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
+      </view>
+    </view>
+  </block>
+</form>

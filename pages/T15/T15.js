@@ -1,10 +1,9 @@
 // pages/T15/T15.js
+var config = require('../../utils/config.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    URL: config.URL,
+    tjdata: '',
     cps: ['HPEG', 'HPEG水剂', 'TPEG水剂', 'DEIPA'],
     index: 0,
     listData: [{
@@ -21,34 +20,51 @@ Page({
   },
 
   formSubmit: function(e) {
+    //console.log(e);
+    var that = this;
+    var _tjdata = e.detail.value;
+    var tjdata = that.data.tjdata;  
+    var htph;
+    //12console.log(tjdata);
+    wx.request({
+      url: config.URL + '/getcp',   
+     
+      data: {     
+        cpdata:_tjdata,
+        kename:e.detail.value.kename,
+        //htph:e.detail.value.htph
+      },
+      success: function(res) {
+        console.log(res);
+      }
+    })
+    console.log(tjdata);
+    /*
     wx.showModal({
       title: '提示',
       content: '确定要提交吗？',
       success: function(sm) {
         if (sm.confirm) {
-          // 用户点击了确定 可以调用删除方法了
-          //console.log("用户点击了确定")
+          // 用户点击了确定    
+
+          that.setData({
+            tjdata: _tjdata
+          })
           wx.showToast({
             title: '提交成功',
             icon: 'success',
             duration: 2000
           })
+          console.log(tjdata);
 
         } else if (sm.cancel) {
+          //用户点击了取消
           console.log('用户点击取消')
         }
-      }
+      }      
     })
+*/
 
-    // var aaa=e.detail.value;
-    // var arr=[];
-    // for (var i in aaa){
-    //   arr.push(aaa[i]);
-    // }
-    // console.log(aaa);
-    // console.log(arr);
-
-    //console.log('form发生了submit事件，携带数据为：', e.detail.value)
   },
   formReset: function() {
     console.log('form发生了reset事件')

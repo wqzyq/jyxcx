@@ -9,7 +9,7 @@ Page({
     datas:[], 
     routers: [
       {
-        name: '新增',
+        name: '合同',
         url: '/pages/newadd/newadd',
         icon: '../../imgs/xinzeng.png',
         code: '10'

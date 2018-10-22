@@ -31,13 +31,15 @@
 }
 
 .vbtn {
-  margin-left: 10rpx;
+  margin-left: 75rpx;
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;
   width: 230rpx;
 }
-
+.txt{
+  
+}
 .txtinput {
   margin-top: 10rpx;
   width: 100%;

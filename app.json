@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/newadd/newadd",
     "pages/T15/T15",
     "pages/14/test14",
     "pages/13/test13",
     "pages/index/index",
-    "pages/newadd/newadd",
     "pages/notify/notify",
     "pages/confirm/confirm",
     "pages/send/send",

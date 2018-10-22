@@ -1,22 +1,29 @@
 <!--pages/newadd/newadd.wxml-->
-<view class="head">发起流程</view>
+<view class="head">合同流程</view>
 <view class="content">
   <view class="vadd">
     <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
-    <button class='vbtn' type="warn" bindtap='btnCancel'>作废</button>
   </view>
 
   <view class='txtinput'>
-    <input class='txtHTPH' value="{{htInput}}" placeholder="请输入合同编号"></input>
+    <input name='txtHTPH'  value="{{htInput}}" placeholder="请输入合同编号"></input>
     <view class='line'></view>
   </view>
   <view class='txtkh'>
-    <input class='txtKHName' type='text' value="{{khInput}}" placeholder="客户名称"></input>
+    <input name='txtKHName' type='text' value="{{khInput}}" placeholder="客户名称"></input>
   </view>
   <view class='line'></view>
   <view class='txtkh'>
-    <input class='txtKHName' type='text' value="{{Remarks}}" placeholder="备注"></input>
+    <input name='txtbz' type='text' value="{{Remarks}}" placeholder="备注"></input>
+  </view>
+  <view class='line'></view>
+  <view class='txtkh'>
+    <input name='txtbzyq' type='text' value="{{Remarks}}" placeholder="包装要求"></input>
+  </view>
+<view class='line'></view>
+  <view class='txtkh'>
+    <input name='txthtqx' type='text' value="{{Remarks}}" placeholder="合同期限"></input>
   </view>
   <view class='line'></view>
 
@@ -59,6 +66,7 @@
       <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">12D</view>
     </view>
     <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    
       <!-- 减水剂单体系列 -->
       <swiper-item>
         <block wx:for="{{selProData}}" wx:key="{{PrName}}">

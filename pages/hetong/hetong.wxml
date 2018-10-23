@@ -5,7 +5,7 @@
     <view class="vadd">
       <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
       <button class='vbtn' type="primary" formType="submit" >提交</button>
-      <text name="crTime">{{data}}</text>
+      <input class='vbtn' name="crtime" value='{{crtime}}' disabled='true'></input> 
     </view>
     <view class='line'></view>
     <view class='txtkh'>
@@ -20,51 +20,51 @@
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtHTPH' type='text' placeholder="请输入合同编号"></input>
+      <input name='htph' type='text' placeholder="请输入合同编号"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtKHName' type='text' placeholder="客户名称"></input>
+      <input name='khmc' type='text' placeholder="客户名称"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtbzyq' type='text' placeholder="包装要求"></input>
+      <input name='bzyq' type='text' placeholder="包装要求"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txthtqx' type='text' placeholder="合同期限"></input>
+      <input name='htqx' type='text' placeholder="合同期限"></input>
     </view>
 
     <!--收款信息-->
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtshdz' type='text' placeholder="收货地址"></input>
+      <input name='shdz' type='text' placeholder="收货地址"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txthshr' type='text' placeholder="收货人"></input>
+      <input name='shr' type='text' placeholder="收货人"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtshrdh' type='text' placeholder="收货人电话"></input>
+      <input name='shrdh' type='text' placeholder="收货人电话"></input>
     </view>
 
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='txtbz' type='text' placeholder="备注"></input>
+      <input name='bz' type='text' placeholder="备注"></input>
     </view>
     <view class='line'></view>
     <!--提货情况-->
-    <radio-group name='ts' class="radio-group">
+    <radio-group name='fhfs' class="radio-group">
       <label class="radio" wx:for="{{thitems}}" wx:key="{{index}}">
-        <radio  value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+        <radio class="ravalue" value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
       </label>
     </radio-group>
     <view class='line'></view>
     <!--仓库情况-->
     <radio-group name='ck' class="radio-group">
       <label class="radio" wx:for="{{items}}" wx:key="{{index}}">
-        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+        <radio class="ravalue" value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
       </label>
     </radio-group>
     <!--产品显示-->
@@ -78,7 +78,7 @@
       <view class="tr bg-g">
         <view class="td">
           <view class="section">
-            <picker bindchange="cpPickerChange" value="{{cpId}}" range="{{cps}}">
+            <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
               <view class="picker">
                 {{cps[cpId]}}
               </view>
@@ -96,7 +96,7 @@
           </view>
         </view>
         <view class="td">
-          <input name='je' type='digit' value='{{je}}' placeholder="金额"></input>
+          <input name='je' type='digit' value='{{je}}' disabled='true' placeholder="金额"></input>
         </view>
       </view>
 

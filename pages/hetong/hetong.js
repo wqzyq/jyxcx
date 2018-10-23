@@ -8,11 +8,11 @@ Page({
     URL: config.URL,
     xsdbs: [],
     cps: [],
-    crTime: '',
+    crtime: '',
     xsdbId: 0,
     cpId: 0,
-    sl: 0,
-    dj: 0,
+    sl: '',
+    dj: '',
     je: 0,
     winWidth: 0,
     winHeight: 0,
@@ -64,7 +64,42 @@ Page({
 
   //提交按钮
   formSubmit: function(e) {
-    console.log(e);
+    wx.showModal({
+      title: '提示',
+      content: '确定要提交吗？',
+      success: function(sm) {
+        if (sm.confirm) {
+          // 用户点击了提交 
+          wx.request({
+            url: config.URL + '/giveht',
+            method: 'POST',
+            data: {
+              htsj: e.detail.value
+            },
+            success: function(res) {
+              if (res.data == 1) {
+                //添加成功提示
+                wx.showToast({
+                  title: '提交成功',
+                  icon: 'success',
+                  duration: 3000
+                })
+              } else {
+                wx.showToast({
+                  title: '提交失败或合同重复！',
+                  icon: 'none',
+                  duration: 3000
+                })
+              }
+            }
+          })
+        } else if (sm.cancel) {
+          //用户点击了取消
+
+        }
+      }
+    })
+
   },
   //数量输入
   slchange: function(e) {
@@ -103,6 +138,14 @@ Page({
     var that = this;
     let _xsdbs = [];
     let recps = [];
+    let crtime = that.data.crtime;
+    //初始化日期
+    var date = new Date();
+    var myDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+    that.setData({
+      crtime: myDate
+    })
+
     //从数据库获取销售代表
     wx.request({
       url: config.URL + '/getxsdb',

@@ -7,6 +7,7 @@ Page({
   data: {
     khname: '厦门海立德新材料有限公司',
     prInput: '',
+   
     khInput: '',
     Remarks: '',
     winWidth: 0,

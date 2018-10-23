@@ -5,11 +5,22 @@
     <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
     <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
   </view>
-
-  <view class='txtinput'>
-    <input name='txtHTPH'  value="{{htInput}}" placeholder="请输入合同编号"></input>
-    <view class='line'></view>
+  <view class='line'></view>
+  <view class='txtkh'>
+    <text>销售代表：</text>
+    <view class="section">
+      <picker  value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
   </view>
+   <view class='line'></view>   
+  <view class='txtkh'>
+    <input name='txtHTPH' type='text' value="{{htInput}}" placeholder="请输入合同编号"></input>    
+  </view>
+  <view class='line'></view>
   <view class='txtkh'>
     <input name='txtKHName' type='text' value="{{khInput}}" placeholder="客户名称"></input>
   </view>
@@ -21,7 +32,7 @@
   <view class='txtkh'>
     <input name='txtbzyq' type='text' value="{{Remarks}}" placeholder="包装要求"></input>
   </view>
-<view class='line'></view>
+  <view class='line'></view>
   <view class='txtkh'>
     <input name='txthtqx' type='text' value="{{Remarks}}" placeholder="合同期限"></input>
   </view>
@@ -66,7 +77,7 @@
       <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">12D</view>
     </view>
     <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-    
+
       <!-- 减水剂单体系列 -->
       <swiper-item>
         <block wx:for="{{selProData}}" wx:key="{{PrName}}">

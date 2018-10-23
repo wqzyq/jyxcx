@@ -6,6 +6,9 @@ Page({
    */
   data: {
     khname: '厦门海立德新材料有限公司',
+    array: ['麦娴', '张颖', '程可红', '秦丹', '刘薇'],
+    fharr: ['装置班组', '仓库'],
+    index: 0,
     htInput: '',
     prInput: '',
     khInput: '',

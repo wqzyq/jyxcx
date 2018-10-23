@@ -15,24 +15,8 @@ Page({
     dj: '',
     je: 0,
     winWidth: 0,
-    winHeight: 0,
-    listData: [{
-        "PrName": "改性醇胺",
-        "Model": "规格10",
-        "Number": "100",
-        "price": "5000",
-        "Money": "50000"
-      },
-      {
-        "PrName": "复性醇胺",
-        "Model": "规格11",
-        "Number": "100",
-        "price": "5000",
-        "Money": "50000"
-      },
-    ],
+    winHeight: 0,    
     items: [{
-
         name: '装置',
         checked: 'true'
       },

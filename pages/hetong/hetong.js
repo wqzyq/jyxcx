@@ -15,7 +15,7 @@ Page({
     dj: '',
     je: 0,
     winWidth: 0,
-    winHeight: 0,    
+    winHeight: 0,
     items: [{
         name: '装置',
         checked: 'true'
@@ -34,17 +34,40 @@ Page({
       {
         name: '自提',
       },
-
     ],
+    //input的值
+    htphvalue: '',
+    khmc: '',
+    bzyq: '',
+    htqx: '',
+    shdz: '',
+    shr: '',
+    shrdh: '',
+    bz: '',
+    sl: '',
+    dj: '',
+    je: 0,
   },
 
   //新增按钮
-  btnAdd: function(e) {
-    this.setData({
-      htInput: '',
-      khInput: '',
+  btnAdd: function() {
+    let that = this;
+    that.setData({
+      htphvalue: '',
+      khmc: '',
+      bzyq: '',
+      htqx: '',
+      shdz: '',
+      shr: '',
+      shrdh: '',
+      bz: '',
+      sl: '',
+      dj: '',
+      je: 0,
     })
+
   },
+
 
   //提交按钮
   formSubmit: function(e) {
@@ -79,7 +102,6 @@ Page({
           })
         } else if (sm.cancel) {
           //用户点击了取消
-
         }
       }
     })
@@ -155,8 +177,6 @@ Page({
       }
     })
 
-
-
     /**
      * 获取系统信息
      */
@@ -185,7 +205,4 @@ Page({
       cpId: e.detail.value
     })
   },
-
-
-
 })

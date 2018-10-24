@@ -3,7 +3,7 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="content">
     <view class="vadd">
-      <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
+      <button class='vbtn' type="primary" bindtap='btnAdd' >新增</button>
       <button class='vbtn' type="primary" formType="submit" >提交</button>
       <input class='vbtn' name="crtime" value='{{crtime}}' disabled='true'></input> 
     </view>
@@ -20,38 +20,38 @@
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='htph' type='text' placeholder="请输入合同编号"></input>
+      <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='khmc' type='text' placeholder="客户名称"></input>
+      <input name='khmc' type='text' value='{{khmc}}' placeholder="客户名称"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='bzyq' type='text' placeholder="包装要求"></input>
+      <input name='bzyq' type='text'  value='{{bzyq}}' placeholder="包装要求"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='htqx' type='text' placeholder="合同期限"></input>
+      <input name='htqx' type='text'  value='{{htqx}}' placeholder="合同期限"></input>
     </view>
 
     <!--收款信息-->
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='shdz' type='text' placeholder="收货地址"></input>
+      <input name='shdz' type='text' value='{{shdz}}' placeholder="收货地址"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='shr' type='text' placeholder="收货人"></input>
+      <input name='shr' type='text' value='{{shr}}' placeholder="收货人"></input>
     </view>
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='shrdh' type='text' placeholder="收货人电话"></input>
+      <input name='shrdh' type='text' value='{{shrdh}}' placeholder="收货人电话"></input>
     </view>
 
     <view class='line'></view>
     <view class='txtkh'>
-      <input name='bz' type='text' placeholder="备注"></input>
+      <input name='bz' type='text' value='{{bz2}}' placeholder="备注"></input>
     </view>
     <view class='line'></view>
     <!--提货情况-->

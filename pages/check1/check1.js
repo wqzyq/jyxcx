@@ -1,14 +1,12 @@
 // pages/newadd/newadd.js
 var config = require('../../utils/config.js');
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  /*** 页面的初始数据 ***/
   data: {
     URL: config.URL,
     winWidth: 0,
     winHeight: 0,
+    chetime1: '',
     xsdb: '',
     htph: '',
     khmc: '',
@@ -25,57 +23,117 @@ Page({
     dj: '',
     je: 0,
   },
+  //提交按钮
+  formSubmit: function(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确定要提交吗？',
+      success: function(sm) {
+        if (sm.confirm) {
+          // 用户点击了提交 
+          wx.request({
+            url: config.URL + '/givechesj1',
+            method: 'POST',
+            data: {
+              htsj: e.detail.value
+            },
+            success: function(res) {
+              if (res.data == 1) {
+                //添加成功提示
+                wx.showToast({
+                  title: '提交成功!',
+                  icon: 'success',
+                  duration: 3000
+                })
+              } else {
+                wx.showToast({
+                  title: '提交失败！',
+                  icon: 'none',
+                  duration: 3000
+                })
+              }
+            }
+          })
+        } else if (sm.cancel) {
+          //用户点击了取消
+        }
+      }
+    })
+  },
+
+  //撤回按钮
+  btnCh: function() {
+    let that=this;
+    wx.showModal({
+      title: '提示',
+      content: '确定要撤回吗？',
+      success: function(sm) {
+        if (sm.confirm) {
+          // 用户点击了撤回 
+          wx.request({
+            url: config.URL + '/givechech1',
+            method: 'POST',
+            data: {
+             htph:that.data.htph
+            },
+            success: function(res) {              
+              if (res.data == 1) {
+                //撤回成功提示
+                wx.showToast({
+                  title: '撤回成功!',
+                  icon: 'success',
+                  duration: 3000
+                })
+              } else {
+                wx.showToast({
+                  title: '撤回失败！',
+                  icon: 'none',
+                  duration: 3000
+                })
+              }
+            }
+          })
+        } else if (sm.cancel) {
+          //用户点击了取消
+        }
+      }
+    })
+  },
 
 
   onLoad: function() {
     var that = this;
-    let _xsdb, _htph, _khmc, _bzyq, _htqx, _shdz, _shr;
-    let _shrdh, _bz, _fhfs, _ck, _cpname, _sl, _dj, _je;
+    //获取提交时间
+    var date = new Date();
+    var myDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+    that.setData({
+      chetime1: myDate
+    })
     //获取单据信息（数据）
     wx.request({
       url: config.URL + '/getchesj1',
       success: function(res) {
-        console.log(res);
-        for (let i = 0; i < res.data.length; i++) {
-          _xsdb = res.data[i].xsdb;
-          _htph = res.data[i].htph;
-          _khmc = res.data[i].khmc;
-          _bzyq = res.data[i].bzyq;
-          _htqx = res.data[i].htqx;
-          _shdz = res.data[i].shdz;
-          _shr = res.data[i].shr;
-          _shrdh = res.data[i].shrdh;
-          _bz = res.data[i].bz;
-          _fhfs = res.data[i].fhfs;
-          _ck = res.data[i].ck;
-          _cpname = res.data[i].cpname;
-          _sl = res.data[i].sl;
-          _dj = res.data[i].dj;
-          _je = res.data[i].je;
-        }
         that.setData({
-          xsdb: _xsdb,
-          htph: _htph,
-          khmc: _khmc,
-          bzyq: _bzyq,
-          htqx: _htqx,
-          shdz: _shdz,
-          shr: _shr,
-          shrdh: _shrdh,
-          bz: _bz,
-          fhfs: _fhfs,
-          ck: _ck,
-          cpname: _cpname,
-          sl: _sl,
-          dj: _dj,
-          je: _je,
+          xsdb: res.data[0].xsdb,
+          htph: res.data[0].htph,
+          khmc: res.data[0].khmc,
+          bzyq: res.data[0].bzyq,
+          htqx: res.data[0].htqx,
+          shdz: res.data[0].shdz,
+          shr: res.data[0].shr,
+          shrdh: res.data[0].shrdh,
+          bz: res.data[0].bz,
+          fhfs: res.data[0].fhfs,
+          ck: res.data[0].ck,
+          cpname: res.data[0].cpname,
+          sl: parseFloat(res.data[0].sl).toFixed(2),
+          dj: parseFloat(res.data[0].dj).toFixed(2),
+          je: parseFloat(res.data[0].je).toFixed(2),
         });
       }
     })
 
-    /**
-     * 获取系统信息
-     */
+    /*** 获取系统信息  ***/
     wx.getSystemInfo({
       success: function(res) {
         that.setData({

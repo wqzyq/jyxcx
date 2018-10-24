@@ -3,83 +3,95 @@
   <view class="head">复核流程1</view>
   <view class="content">
     <view class="vadd">
-      <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
-      <button class='vbtn' type="warn" bindtap='btnCancel'>撤回</button>
+      <button class='vbtn' type="primary" formType="submit">提交</button>
+      <button class='vbtn' type="warn" bindtap='btnCh'>撤回</button>
     </view>
+
+    <view class='txtsh'>
+      <text>提交时间：</text>
+      <input class='inp' name='chetime1' type='text' disabled='true' value='{{chetime1}}'></input>
+    </view>
+    <view class='line'></view>
     <view class='txtsh'>
       <text>销售代表：</text>
-      <view class="section">
-        <input name='xsdb' type='text' disabled='true' value='{{xsdb}}'></input>
-      </view>
+      <input class='inp' name='xsdb' type='text' disabled='true' value='{{xsdb}}'></input>
     </view>
     <view class='line'></view>
     <view class='txtsh'>
       <text>合同编号：</text>
-      <input name='htph' type='text' disabled='true' value='{{htph}}'></input>
+      <input class='inp' name='htph' type='text' disabled='true' value='{{htph}}'></input>
     </view>
     <view class='line'></view>
     <view class='txtsh'>
       <text>客户名称：</text>
-      <input name='khmc' type='text' disabled='true' value='{{khmc}}'></input>
+      <input class='inp' name='khmc' type='text' disabled='true' value='{{khmc}}'></input>
     </view>
     <view class='line'></view>
     <view class='txtsh'>
       <text>包装要求：</text>
-      <input name='bzyq' type='text' disabled='true' value='{{bzyq}}'></input>
+      <input class='inp' name='bzyq' type='text' disabled='true' value='{{bzyq}}'></input>
     </view>
     <view class='line'></view>
     <view class='txtsh'>
       <text>合同期限：</text>
-      <input name='htqx' type='text' disabled='true' value='{{htqx}}'></input>
+      <input class='inp' name='htqx' type='text' disabled='true' value='{{htqx}}'></input>
     </view>
 
     <view class='line'></view>
     <view class='txtsh'>
       <text>收货地址：</text>
-      <input name='htqx' type='text' disabled='true' value='{{htqx}}'></input>
+      <input class='inp' name='shdz' type='text' disabled='true' value='{{shdz}}'></input>
     </view>
 
     <view class='line'></view>
     <view class='txtsh'>
       <text>收货人：</text>
-      <input name='shr' type='text' disabled='true' value='{{shrdh}}'></input>
+      <input class='inp' name='shr' type='text' disabled='true' value='{{shr}}'></input>
     </view>
 
     <view class='line'></view>
     <view class='txtsh'>
       <text>收货人电话：</text>
-      <input name='shrdh' type='text' disabled='true' value='{{shrdh}}'></input>
+      <input class='inp' name='shrdh' type='text' disabled='true' value='{{shrdh}}'></input>
     </view>
     <view class='line'></view>
     <view class='txtsh'>
       <text>备注：</text>
-      <input name='bz' type='text' disabled='true' value='{{bz}}'></input>
+      <input class='inp' name='bz' type='text' disabled='true' value='{{bz}}'></input>
     </view>
-     <view class='line'></view>
+    <view class='line'></view>
     <view class='txtsh'>
       <text>发货方式：</text>
-      <input name='fhfs' type='text' disabled='true' value='{{fhfs}}'></input>
+      <input class='inp' name='fhfs' type='text' disabled='true' value='{{fhfs}}'></input>
     </view>
-     <view class='line'></view>
+    <view class='line'></view>
     <view class='txtsh'>
       <text>装货地点：</text>
-      <input name='ck' type='text' disabled='true' value='{{ck}}'></input>
+      <input class='inp' name='ck' type='text' disabled='true' value='{{ck}}'></input>
     </view>
     <view class='line'></view>
 
     <!--产品显示-->
     <view class="table">
       <view class="tr bg-w">
-        <view class="th">产品</view>     
+        <view class="th">产品</view>
         <view class="th ">数量</view>
         <view class="th ">单价</view>
         <view class="th ">金额</view>
       </view>
       <view class="tr bg-g">
-        <view class="td">{{item.PrName}}</view>       
-        <view class="td">{{item.Number}}</view>
-        <view class="td">{{item.price}}</view>
-        <view class="td">{{item.Money}}</view>
+        <view class="td">
+          <input name='cpname' disabled='true' value='{{cpname}}'></input>
+        </view>
+        <view class="td">
+          <input name='sl' disabled='true' value='{{sl}}'></input>
+        </view>
+        <view class="td">
+          <input name='dj' disabled='true' value='{{dj}}'></input>
+        </view>
+        <view class="td">
+          <input name='je' disabled='true' value='{{je}}'></input>
+        </view>
       </view>
 
     </view>

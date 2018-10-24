@@ -12,7 +12,7 @@
 }
 
 .chb {
-  height: 5rpx; 
+  height: 5rpx;
   font-size: 5rpx;
 }
 
@@ -76,8 +76,6 @@
   text-align: center;
 }
 
-
-
 /*表格设置*/
 
 .table {
@@ -94,7 +92,7 @@
 }
 
 .td {
-  font-size: 25rpx;
+  font-size: 30rpx;
   width: 40%;
   justify-content: center;
   text-align: center;
@@ -116,33 +114,50 @@
   display: flex;
   height: 3rem;
   align-items: center;
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
-.txtPro{
+
+.txtPro {
   margin-left: 10rpx;
-   display: flex;
+  display: flex;
   flex-direction: row;
   font-size: 30rpx;
 }
-.btnSelPro{
+
+.btnSelPro {
   margin-top: 25rpx;
 }
+
 /*radio设置*/
-.radio-group{
+
+.radio-group {
   margin-top: 30rpx;
   margin-bottom: 30rpx;
 }
-.radio{
+
+.radio {
   margin-left: 90rpx;
   font-size: 25rpx;
 }
 
 /*收款信息*/
-.txtsh{
-  margin-top: 2rpx;
+
+.txtsh {  
   font-family: "微软雅黑";
   font-size: 30rpx;
   display: flex;
   flex-direction: row;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-weight: bold;
+}
+
+.inp {
+  font-family: "微软雅黑";
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  color: blue;
 }

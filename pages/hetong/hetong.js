@@ -68,7 +68,6 @@ Page({
 
   },
 
-
   //提交按钮
   formSubmit: function(e) {
     wx.showModal({

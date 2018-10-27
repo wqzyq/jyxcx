@@ -1,0 +1,42 @@
+<!--pages/hetong/htmingxi.wxml-->
+<view class="head">合同明细管理</view>
+<view class='txtkh'>
+  <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号"></input>
+</view>
+<view class='line'></view>
+<view class='txtkh'>
+  <input name='khmc' type='text' value='{{khmc}}' placeholder="客户名称"></input>
+</view>
+<view class='line'></view>
+<radio-group class="radio-group">
+  <label class="radio" wx:for="{{items}}" wx:key="{{unique}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</radio-group>
+<view class='btncs'>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="btncs"> 查询按钮 </button>
+</view>
+<view class='btncs'>
+ <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="btnadd" hover-class="other-button-hover"> 新增按钮 </button>
+</view>
+
+<!--产品显示-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th ">客户名称</view>
+    <view class="th ">产品名称</view>
+    <view class="th ">数量</view>
+  </view>
+  <view class="tr bg-g">
+    <view class="td">
+      <text>产品</text>
+    </view>
+    <view class="td">
+      <text>产品</text>
+    </view>
+    <view class="td">
+      <text>产品</text>
+    </view>
+  </view>
+</view>

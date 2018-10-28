@@ -1,4 +1,4 @@
-/* pages/hetong/htmingxi.wxss */
+/* pages/hetong/hetong.wxss */
 
 .head {
   width: 100%;
@@ -9,6 +9,42 @@
   text-align: center;
   line-height: 100rpx;
   letter-spacing: 10rpx;
+}
+
+.chb {
+  height: 5rpx;
+  font-size: 5rpx;
+}
+
+.content {
+  margin-top: 10rpx;
+  font-family: "微软雅黑";
+}
+
+.vadd {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25prx;
+}
+
+.vbtn {
+  margin-left: 25rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  width: 230rpx;
+}
+
+.txtinput {
+  margin-top: 10rpx;
+  width: 100%;
+  border: solid, black, 1rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25rpx;
 }
 
 .txtkh {
@@ -24,19 +60,21 @@
   background: rgb(237, 236, 232);
 }
 
-.radio {
-  margin-left: 100rpx;
+.line1 {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 3rpx;
+  background: rgb(237, 236, 232);
 }
 
-.btncs {
-  margin-top: 30rpx;
-}
-
-.navht {
-  margin-top: 20rpx;
+.product {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
   text-align: center;
-  margin-bottom: 20rpx;
 }
+
 
 /*表格设置*/
 
@@ -52,15 +90,12 @@
   height: 3rem;
   align-items: center;
 }
-
-.radio-group {
+.radio-group{
   margin-left: 70rpx;
 }
-
-.ravalue {
+.ravalue{
   margin-left: 50rpx;
 }
-
 .td {
   font-size: 35rpx;
   width: 40%;
@@ -86,4 +121,15 @@
   align-items: center;
   font-size: 35rpx;
   font-weight: bold;
+}
+
+.txtPro {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+}
+
+.btnSelPro {
+  margin-top: 25rpx;
 }

@@ -140,7 +140,9 @@ Page({
   },
 
   //单据初始化
-  onLoad: function() {
+  onLoad: function(options) {
+    console.log(options);
+    console.log("aa");
     var that = this;
     let _xsdbs = [];
     let recps = [];
@@ -152,30 +154,31 @@ Page({
       crtime: myDate
     })
 
+
     //从数据库获取销售代表
-    wx.request({
-      url: config.URL + '/getxsdb',
-      success: function(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          _xsdbs.push(res.data[i].name);
-        }
-        that.setData({
-          xsdbs: _xsdbs
-        });
-      }
-    })
-    //从数据库获取产品
-    wx.request({
-      url: config.URL + '/getcp',
-      success: function(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          recps.push(res.data[i].name);
-        }
-        that.setData({
-          cps: recps
-        });
-      }
-    })
+    // wx.request({
+    //   url: config.URL + '/getxsdb',
+    //   success: function(res) {
+    //     for (let i = 0; i < res.data.length; i++) {
+    //       _xsdbs.push(res.data[i].name);
+    //     }
+    //     that.setData({
+    //       xsdbs: _xsdbs
+    //     });
+    //   }
+    // })
+    // //从数据库获取产品
+    // wx.request({
+    //   url: config.URL + '/getcp',
+    //   success: function(res) {
+    //     for (let i = 0; i < res.data.length; i++) {
+    //       recps.push(res.data[i].name);
+    //     }
+    //     that.setData({
+    //       cps: recps
+    //     });
+    //   }
+    // })
 
     /**
      * 获取系统信息

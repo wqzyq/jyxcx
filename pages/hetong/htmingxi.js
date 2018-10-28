@@ -6,6 +6,7 @@ Page({
    */
   data: {
     URL: config.URL,
+    arrsjmx: [],
     items: [{
         name: 'db',
         value: '待办',
@@ -18,27 +19,42 @@ Page({
     ]
   },
 
+  //到明细页面
+  tomingxi: function(e) {
+    let _htph = '';
+    _htph = e.currentTarget.dataset.htph
+    wx.navigateTo({
+      url: 'hetong?htph=' + _htph,
+    })
+  },
 
-btncs:function(){
+  //查询按钮
+  btncs: function() {
 
-},
-btnadd:function(){
+  },
 
-},
+  //新增按钮
+  btnadd: function() {
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    //从数据库获取产品
+    //从数据库获取待办单据
+    let that = this;
+    let _arrsjmx = [];
     wx.request({
-      url: config.URL + '/getcp',
-      success: function (res) {
+      url: config.URL + '/gethtsjmx',
+      success: function(res) {
+        //console.log(res);
         for (let i = 0; i < res.data.length; i++) {
-          recps.push(res.data[i].name);
+          _arrsjmx.push(res.data[i]);
         }
         that.setData({
-          cps: recps
+          arrsjmx: _arrsjmx
         });
+        console.log(_arrsjmx);
       }
     })
   },

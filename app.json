@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/hetong/htmingxi",
-    "pages/check1/check1",
     "pages/hetong/hetong",
+    "pages/check1/check1",
     "pages/newadd/newadd",
     "pages/T15/T15",
     "pages/14/test14",
@@ -15,7 +15,8 @@
     "pages/cardebug/cardebug",
     "pages/carsel/carsel",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/hetong/htmxnr"
   ],
   "window": {
     "backgroundTextStyle": "light",

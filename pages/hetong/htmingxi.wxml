@@ -16,10 +16,9 @@
 <view class='btncs'>
   <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="btncs"> 查询按钮 </button>
 </view>
-<view class='btncs'>
- <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="btnadd" hover-class="other-button-hover"> 新增按钮 </button>
-</view>
+
+<navigator class="navht" url="/pages/hetong/hetong">新增按钮</navigator>
+
 
 <!--产品显示-->
 <view class="table">
@@ -28,15 +27,17 @@
     <view class="th ">产品名称</view>
     <view class="th ">数量</view>
   </view>
-  <view class="tr bg-g">
-    <view class="td">
-      <text>产品</text>
-    </view>
-    <view class="td">
-      <text>产品</text>
-    </view>
-    <view class="td">
-      <text>产品</text>
+  <view wx:for="{{arrsjmx}}" wx:key="{{unique}}">
+    <view class="tr bg-g">
+      <view class="td" data-htph="{{item.htph}}" bindtap='tomingxi'>
+        <text> {{item.khmc}}</text>
+      </view>
+      <view class="td">
+        <text> {{item.cpname}}</text>
+      </view>
+      <view class="td">
+        <text> {{item.sl}}</text>
+      </view>
     </view>
   </view>
 </view>

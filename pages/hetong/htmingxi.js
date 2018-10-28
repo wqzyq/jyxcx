@@ -24,7 +24,7 @@ Page({
     let _htph = '';
     _htph = e.currentTarget.dataset.htph
     wx.navigateTo({
-      url: 'hetong?htph=' + _htph,
+      url: 'htmxnr?htph=' + _htph,
     })
   },
 
@@ -53,8 +53,7 @@ Page({
         }
         that.setData({
           arrsjmx: _arrsjmx
-        });
-        console.log(_arrsjmx);
+        });        
       }
     })
   },

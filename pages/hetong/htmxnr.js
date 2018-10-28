@@ -6,6 +6,8 @@ Page({
    */
   data: {
     URL: config.URL,
+    htph: '',
+    htmx: [],
     xsdbs: [],
     cps: [],
     crtime: '',
@@ -53,7 +55,6 @@ Page({
   btnAdd: function() {
     let that = this;
     that.setData({
-      htph:'',
       htphvalue: '',
       khmc: '',
       bzyq: '',
@@ -140,13 +141,14 @@ Page({
   },
 
   //单据初始化
-  onLoad: function(options) {
-    console.log(options);
-    console.log("aa");
+  onLoad: function(res) {
     var that = this;
+    let _htph = res.htph;
     let _xsdbs = [];
     let recps = [];
     let crtime = that.data.crtime;
+    let _htmx = [];
+
     //初始化日期
     var date = new Date();
     var myDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
@@ -154,19 +156,21 @@ Page({
       crtime: myDate
     })
 
-
-    //从数据库获取销售代表
-    // wx.request({
-    //   url: config.URL + '/getxsdb',
-    //   success: function(res) {
-    //     for (let i = 0; i < res.data.length; i++) {
-    //       _xsdbs.push(res.data[i].name);
-    //     }
-    //     that.setData({
-    //       xsdbs: _xsdbs
-    //     });
-    //   }
-    // })
+    //从数据库获取该合同的所有信息
+    wx.request({
+      url: config.URL + '/gethtmx',
+      data: {
+        htph: _htph
+      },
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          _htmx.push(res.data[i]);
+        }
+        that.setData({
+          htmx: _htmx
+        });
+      }
+    })
     // //从数据库获取产品
     // wx.request({
     //   url: config.URL + '/getcp',

@@ -20,21 +20,24 @@ Page({
     winHeight: 0,
     items: [{
         name: '装置',
-        checked: 'true'
+        checked: false
       },
       {
         name: '仓库',
+        checked: false
       },
       {
-        name: '外仓'
+        name: '外仓',
+        checked: false
       },
     ],
     thitems: [{
         name: '发货',
-        checked: 'true'
+        checked: false,
       },
       {
         name: '自提',
+        checked: false,
       },
     ],
     //input的值
@@ -49,25 +52,6 @@ Page({
     sl: '',
     dj: '',
     je: 0,
-  },
-
-  //新增按钮
-  btnAdd: function() {
-    let that = this;
-    that.setData({
-      htphvalue: '',
-      khmc: '',
-      bzyq: '',
-      htqx: '',
-      shdz: '',
-      shr: '',
-      shrdh: '',
-      bz: '',
-      sl: '',
-      dj: '',
-      je: 0,
-    })
-
   },
 
   //提交按钮
@@ -112,32 +96,28 @@ Page({
   slchange: function(e) {
     let that = this;
     let _sl = e.detail.value;
-    let sl = that.data.sl;
-    let dj = that.data.dj;
-    let je = that.data.je;
+    let _htmx = that.data.htmx;
+    for (let i = 0; i < _htmx.length; i++) {
+      _htmx[i]["sl"] = _sl;
+      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
+    }
     that.setData({
-      sl: _sl
+      htmx: _htmx
     })
-    that.setData({
-      je: _sl * dj
-    })
-
   },
 
   //单价输入
   djchange: function(e) {
     let that = this;
     let _dj = e.detail.value;
-    let sl = that.data.sl;
-    let dj = that.data.dj;
-    let je = that.data.je;
+    let _htmx = that.data.htmx;
+    for (let i = 0; i < _htmx.length; i++) {
+      _htmx[i]["dj"] = _dj;
+      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
+    }
     that.setData({
-      dj: _dj
+      htmx: _htmx
     })
-    that.setData({
-      je: sl * _dj
-    })
-
   },
 
   //单据初始化
@@ -166,23 +146,85 @@ Page({
         for (let i = 0; i < res.data.length; i++) {
           _htmx.push(res.data[i]);
         }
+        //修改提货方式checked
+        let _thitems = that.data.thitems;
+        if (_htmx[0]["fhfs"] == "发货") {
+          _thitems[0]["checked"] = true;
+          _thitems[1]["checked"] = false;
+        } else {
+          _thitems[0]["checked"] = false;
+          _thitems[1]["checked"] = true;
+        }
+
+        //修改仓库的checked
+        let _items = that.data.items;
+        switch (_htmx[0]["ck"]) {
+          case "装置":
+            _items[0]["checked"] = true;
+            _items[1]["checked"] = false;
+            _items[2]["checked"] = false;
+            break;
+          case "仓库":
+            _items[0]["checked"] = false;
+            _items[1]["checked"] = true;
+            _items[2]["checked"] = false;
+            break;
+          default:
+            _items[0]["checked"] = false;
+            _items[1]["checked"] = false;
+            _items[2]["checked"] = true;
+            break;
+        }
+        //设置销售代表的xsdbId
+        let _xsdbId;
+        wx.request({
+          url: config.URL + '/getxsdbid',
+          data: {
+            xsdb: _htmx[0]["xsdb"]
+          },
+          success: function(res) {
+            console.log(res);
+            //_xsdbId=res.data;
+          }
+        })
+
+        //设置data数据
         that.setData({
-          htmx: _htmx
+          htmx: _htmx,
+          thitems: _thitems,
+          items: _items,
+          xsdbId:_xsdbId
         });
       }
     })
-    // //从数据库获取产品
-    // wx.request({
-    //   url: config.URL + '/getcp',
-    //   success: function(res) {
-    //     for (let i = 0; i < res.data.length; i++) {
-    //       recps.push(res.data[i].name);
-    //     }
-    //     that.setData({
-    //       cps: recps
-    //     });
-    //   }
-    // })
+
+
+    //从数据库获取销售代表
+    wx.request({
+      url: config.URL + '/getxsdb',
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          _xsdbs.push(res.data[i].name);
+        }
+        that.setData({
+          xsdbs: _xsdbs
+        });
+      }
+    })
+    //从数据库获取产品
+    wx.request({
+      url: config.URL + '/getcp',
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          recps.push(res.data[i].name);
+        }
+        that.setData({
+          cps: recps
+        });
+      }
+    })
+
+
 
     /**
      * 获取系统信息

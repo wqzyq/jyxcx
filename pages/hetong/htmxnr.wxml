@@ -3,8 +3,7 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view wx:for="{{htmx}}" wx:key="unique"> 
     <view class="content">
-      <view class="vadd">
-        <button class='vbtn' type="primary" bindtap='btnAdd'>新增</button>
+      <view class="vadd">      
         <button class='vbtn' type="primary" formType="submit">提交</button>
         <input class='vbtn' name="crtime" value='{{crtime}}' disabled='true'></input>
       </view>
@@ -21,37 +20,45 @@
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+      <text>合同编号：</text>
         <input name='htph' type='text' value='{{item.htph}}' placeholder="请输入合同编号"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+        <text>客户名称：</text>
         <input name='khmc' type='text' value='{{item.khmc}}' placeholder="客户名称"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+        <text>包装要求：</text>
         <input name='bzyq' type='text' value='{{item.bzyq}}' placeholder="包装要求"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+        <text>合同期限：</text>
         <input name='htqx' type='text' value='{{item.htqx}}' placeholder="合同期限"></input>
       </view>
 
       <!--收款信息-->
       <view class='line'></view>
       <view class='txtkh'>
+        <text>收货地址：</text>
         <input name='shdz' type='text' value='{{item.shdz}}' placeholder="收货地址"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+        <text>收货姓名：</text>
         <input name='shr' type='text' value='{{item.shr}}' placeholder="收货人"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>
+        <text>收货电话：</text>
         <input name='shrdh' type='text' value='{{item.shrdh}}' placeholder="收货人电话"></input>
       </view>
 
       <view class='line'></view>
       <view class='txtkh'>
+        <text>相关备注：</text>
         <input name='bz' type='text' value='{{item.bz2}}' placeholder="备注"></input>
       </view>
       <view class='line'></view>

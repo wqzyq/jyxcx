@@ -133,3 +133,7 @@
 .btnSelPro {
   margin-top: 25rpx;
 }
+
+.navadd{
+  width: 200rpx;
+}

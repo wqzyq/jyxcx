@@ -63,22 +63,22 @@ Page({
         if (sm.confirm) {
           // 用户点击了提交 
           wx.request({
-            url: config.URL + '/giveht',
+            url: config.URL + '/givehtxg',
             method: 'POST',
             data: {
               htsj: e.detail.value
             },
             success: function(res) {
-              if (res.data == 1) {
-                //添加成功提示
+              if (res.data !=0 ) {
+                //添加成功修改提示
                 wx.showToast({
-                  title: '提交成功',
+                  title: '提交修改成功',
                   icon: 'success',
                   duration: 3000
                 })
               } else {
                 wx.showToast({
-                  title: '提交失败或合同重复！',
+                  title: '提交修改失败,请检查！',
                   icon: 'none',
                   duration: 3000
                 })
@@ -136,6 +136,31 @@ Page({
       crtime: myDate
     })
 
+    //从数据库获取销售代表
+    wx.request({
+      url: config.URL + '/getxsdb',
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          _xsdbs.push(res.data[i].name);
+        }
+        that.setData({
+          xsdbs: _xsdbs
+        });
+      }
+    })
+    //从数据库获取产品
+    wx.request({
+      url: config.URL + '/getcp',
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          recps.push(res.data[i].name);
+        }
+        that.setData({
+          cps: recps
+        });
+      }
+    })
+
     //从数据库获取该合同的所有信息
     wx.request({
       url: config.URL + '/gethtmx',
@@ -176,15 +201,32 @@ Page({
             break;
         }
         //设置销售代表的xsdbId
-        let _xsdbId;
+        let _xsdbId = 0;
         wx.request({
           url: config.URL + '/getxsdbid',
           data: {
             xsdb: _htmx[0]["xsdb"]
           },
           success: function(res) {
-            console.log(res);
-            //_xsdbId=res.data;
+            _xsdbId = res.data;
+            that.setData({
+              xsdbId: _xsdbId
+            })
+          }
+        })
+
+        //获取产品cpId
+        let _cpId = 0;
+        wx.request({
+          url: config.URL + '/getcpid',
+          data: {
+            cpname: _htmx[0]["cpname"]
+          },
+          success: function(res) {
+            _cpId = res.data;
+            that.setData({
+              cpId: _cpId
+            })
           }
         })
 
@@ -193,38 +235,9 @@ Page({
           htmx: _htmx,
           thitems: _thitems,
           items: _items,
-          xsdbId:_xsdbId
         });
       }
     })
-
-
-    //从数据库获取销售代表
-    wx.request({
-      url: config.URL + '/getxsdb',
-      success: function(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          _xsdbs.push(res.data[i].name);
-        }
-        that.setData({
-          xsdbs: _xsdbs
-        });
-      }
-    })
-    //从数据库获取产品
-    wx.request({
-      url: config.URL + '/getcp',
-      success: function(res) {
-        for (let i = 0; i < res.data.length; i++) {
-          recps.push(res.data[i].name);
-        }
-        that.setData({
-          cps: recps
-        });
-      }
-    })
-
-
 
     /**
      * 获取系统信息

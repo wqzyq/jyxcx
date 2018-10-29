@@ -21,7 +21,7 @@
       <view class='line'></view>
       <view class='txtkh'>
       <text>合同编号：</text>
-        <input name='htph' type='text' value='{{item.htph}}' placeholder="请输入合同编号"></input>
+        <input name='htph' type='text' value='{{item.htph}}' disabled='true' placeholder="请输入合同编号"></input>
       </view>
       <view class='line'></view>
       <view class='txtkh'>

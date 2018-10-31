@@ -54,14 +54,14 @@ Page({
   onLoad: function(options) {
     //从数据库获取待办单据
     let that = this;
-    that.gethtxi(0,'','');
+    that.gethtxi(1,'','');
   },
 
   gethtxi: function(n, m, k) {
     let that = this;
     let _arrsjmx = []; 
     wx.request({
-      url: config.URL + '/gethtsjmx',
+      url: config.URL + '/getshsjmx1',
       data: {
         lc: n,
         htph: m,

@@ -1,5 +1,5 @@
 <!--pages/hetong/htmingxi.wxml-->
-<view class="head">合同明细管理</view>
+<view class="head">复核一明细管理</view>
 <view class='txtkh'>
   <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号" bindinput='phinput'></input>
 </view>

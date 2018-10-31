@@ -135,5 +135,8 @@
 }
 
 .navadd{
-  width: 200rpx;
+  width: 230rpx;
+}
+.txtbt{
+  width: 150rpx;
 }

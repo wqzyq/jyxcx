@@ -78,7 +78,7 @@ Page({
                 })
               } else {
                 wx.showToast({
-                  title: '提交修改失败,请检查！',
+                  title: '提交修改失败,有可能字段不满足要求，或已经提交的不能重复，请检查！',
                   icon: 'none',
                   duration: 3000
                 })

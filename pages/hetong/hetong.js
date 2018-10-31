@@ -93,7 +93,7 @@ Page({
                 })
               } else {
                 wx.showToast({
-                  title: '提交失败或合同重复！',
+                  title: '提交失败,有可能重复提交或者必填字段为空，请检查！',
                   icon: 'none',
                   duration: 3000
                 })

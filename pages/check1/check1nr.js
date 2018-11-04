@@ -63,13 +63,13 @@ Page({
         if (sm.confirm) {
           // 用户点击了提交 
           wx.request({
-            url: config.URL + '/givehtxg',
+            url: config.URL + '/givechecktj1',
             method: 'POST',
             data: {
               htsj: e.detail.value
             },
             success: function(res) {
-              if (res.data !=0 ) {
+              if (res.data != 0) {
                 //添加成功修改提示
                 wx.showToast({
                   title: '提交修改成功',
@@ -92,32 +92,46 @@ Page({
     })
 
   },
-  //数量输入
-  slchange: function(e) {
-    let that = this;
-    let _sl = e.detail.value;
-    let _htmx = that.data.htmx;
-    for (let i = 0; i < _htmx.length; i++) {
-      _htmx[i]["sl"] = _sl;
-      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
-    }
-    that.setData({
-      htmx: _htmx
-    })
-  },
 
-  //单价输入
-  djchange: function(e) {
+  //撤回按钮
+  chehui: function() {
     let that = this;
-    let _dj = e.detail.value;
-    let _htmx = that.data.htmx;
-    for (let i = 0; i < _htmx.length; i++) {
-      _htmx[i]["dj"] = _dj;
-      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
-    }
-    that.setData({
-      htmx: _htmx
+    let _htph = that.data.htph;  
+    wx.showModal({
+      title: '提示',
+      content: '确定要撤回吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          // 用户点击了撤回
+          wx.request({
+            url: config.URL + '/givecheckch1',
+            method: 'POST',
+            data: {
+              htph:_htph
+            },
+            success: function (res) {
+              if (res.data != 0) {
+                //添加撤回修改提示
+                wx.showToast({
+                  title: '撤回成功',
+                  icon: 'success',
+                  duration: 3000
+                })
+              } else {
+                wx.showToast({
+                  title: '撤回失败！',
+                  icon: 'none',
+                  duration: 3000
+                })
+              }
+            }
+          })
+        } else if (sm.cancel) {
+          //用户点击了取消
+        }
+      }
     })
+
   },
 
   //单据初始化
@@ -128,6 +142,11 @@ Page({
     let recps = [];
     let crtime = that.data.crtime;
     let _htmx = [];
+
+    //将单据编号写入data
+    that.setData({
+      htph:res.htph
+    });
 
     //初始化日期
     var date = new Date();
@@ -252,19 +271,7 @@ Page({
     });
   },
 
-  //销售代表Id
-  bindPickerChange: function(e) {
-    let xsdbId = this.data.xsdbId;
-    this.setData({
-      xsdbId: e.detail.value
-    })
-  },
 
-  //产品Id
-  cpPickerChange: function(e) {
-    let cpId = this.data.cpId;
-    this.setData({
-      cpId: e.detail.value
-    })
-  },
+
+
 })

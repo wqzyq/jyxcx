@@ -28,7 +28,7 @@ Page({
     let _htph = '';
     _htph = e.currentTarget.dataset.htph
     wx.navigateTo({
-      url: 'htmxnr?htph=' + _htph,
+      url: 'check1nr?htph=' + _htph,
     })
   },
 
@@ -41,9 +41,10 @@ Page({
     let _mcinput = that.data.mcinput;   
     if (_radata == 'db') {
       //从数据库获取待办合同单据      
-      that.gethtxi(0,_phinput,_mcinput);
+      that.gethtxi(1,_phinput,_mcinput);
     } else {
-      that.gethtxi(1,_phinput, _mcinput);
+      //从数据库获取已办合同单据
+      that.gethtxi(2,_phinput, _mcinput);
     }
   },
 

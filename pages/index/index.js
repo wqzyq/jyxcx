@@ -10,13 +10,13 @@ Page({
     routers: [
       {
         name: '合同',
-        url: '/pages/newadd/newadd',
+        url: '/pages/hetong/htmingxi',
         icon: '../../imgs/xinzeng.png',
         code: '10'
       },
       {
         name: '复核1',
-        url: '/pages/check1/check1',
+        url: '/pages/check1/check1mx',
         icon: '../../imgs/fuhe1.png',
         code: '11'
       },

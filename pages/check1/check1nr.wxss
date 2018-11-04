@@ -1,0 +1,142 @@
+/* pages/hetong/hetong.wxss */
+
+.head {
+  width: 100%;
+  height: 100rpx;
+  background-color: deepskyblue;
+  color: white;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 100rpx;
+  letter-spacing: 10rpx;
+}
+
+.chb {
+  height: 5rpx;
+  font-size: 5rpx;
+}
+
+.content {
+  margin-top: 10rpx;
+  font-family: "微软雅黑";
+}
+
+.vadd {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25prx;
+}
+
+.vbtn {
+  margin-left: 25rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  width: 230rpx;
+}
+
+.txtinput {
+  margin-top: 10rpx;
+  width: 100%;
+  border: solid, black, 1rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 25rpx;
+}
+
+.txtkh {
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+}
+
+.line {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 8rpx;
+  background: rgb(237, 236, 232);
+}
+
+.line1 {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 3rpx;
+  background: rgb(237, 236, 232);
+}
+
+.product {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  text-align: center;
+}
+
+
+/*表格设置*/
+
+.table {
+  margin-top: 15rpx;
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.radio-group{
+  margin-left: 70rpx;
+}
+.ravalue{
+  margin-left: 50rpx;
+}
+.td {
+  font-size: 35rpx;
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.txtPro {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+}
+
+.btnSelPro {
+  margin-top: 25rpx;
+}
+
+.navadd{
+  width: 230rpx;
+}
+.txtbt{
+  width: 150rpx;
+}

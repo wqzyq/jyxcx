@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/hetong/htmingxi",
     "pages/check1/check1mx",
+    "pages/check1/check1nr",
+    "pages/index/index",
+    "pages/hetong/htmingxi",
     "pages/hetong/hetong",
     "pages/check1/check1",
     "pages/newadd/newadd",
     "pages/T15/T15",
     "pages/14/test14",
     "pages/13/test13",
-    "pages/index/index",
     "pages/notify/notify",
     "pages/confirm/confirm",
     "pages/send/send",

@@ -28,7 +28,7 @@ Page({
       },
       {
         name: '财务',
-        url: '/pages/carsel/carsel',
+        url: '/pages/caiwu/caiwumx',
         icon: '../../imgs/chediao.png',
         code: '11'
       },

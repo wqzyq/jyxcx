@@ -28,14 +28,12 @@
   height: 80rpx;
   line-height: 80rpx;
   font-size: 25prx;
+  text-align: center;
 }
 
 .vbtn {
-  margin-left: 5rpx;
   height: 60rpx;
-  line-height: 60rpx;
-  
-  width: 150rpx;
+  line-height: 60rpx;  
 }
 
 .txtinput {
@@ -75,7 +73,6 @@
   text-align: center;
 }
 
-
 /*表格设置*/
 
 .table {
@@ -90,12 +87,15 @@
   height: 3rem;
   align-items: center;
 }
-.radio-group{
+
+.radio-group {
   margin-left: 70rpx;
 }
-.ravalue{
+
+.ravalue {
   margin-left: 50rpx;
 }
+
 .td {
   font-size: 35rpx;
   width: 40%;
@@ -134,9 +134,12 @@
   margin-top: 25rpx;
 }
 
-.navadd{
-  width: 230rpx;
+.navadd {
+  width: 100%;
+  text-align: center;
 }
-.txtbt{
+
+.txtbt {
   width: 150rpx;
+  text-align: center;
 }

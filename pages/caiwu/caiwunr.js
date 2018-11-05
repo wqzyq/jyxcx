@@ -16,6 +16,7 @@ Page({
     sl: '',
     dj: '',
     je: 0,
+    cpname:'',
     winWidth: 0,
     winHeight: 0,
     items: [{
@@ -52,11 +53,15 @@ Page({
     sl: '',
     dj: '',
     je: 0,
+    sl1: '',
+    dj1: '',
+    je1: 0,
   },
 
   //提交按钮
   formSubmit: function(e) {
-    let that=this;
+    let that = this;
+    console.log(e);
     wx.showModal({
       title: '提示',
       content: '确定要提交吗？',
@@ -64,11 +69,14 @@ Page({
         if (sm.confirm) {
           // 用户点击了提交 
           wx.request({
-            url: config.URL + '/givechecktj2',
+            url: config.URL + '/getcwtj',
             method: 'POST',
             data: {
-              htph:that.data.htph,
-              crtime:that.data.htph
+              htph: that.data.htph,
+              crtime: that.data.crtime,
+              cpname: that.data.cpname,              
+              sl: that.data.sl,
+              je: that.data.je,
             },
             success: function(res) {
               if (res.data != 0) {
@@ -95,55 +103,15 @@ Page({
 
   },
 
-  //撤回按钮
-  chehui: function() {
-    let that = this;
-    let _htph = that.data.htph;  
-    wx.showModal({
-      title: '提示',
-      content: '确定要撤回吗？',
-      success: function (sm) {
-        if (sm.confirm) {
-          // 用户点击了撤回
-          wx.request({
-            url: config.URL + '/givecheckch2',
-            method: 'POST',
-            data: {
-              htph:_htph
-            },
-            success: function (res) {
-              if (res.data != 0) {
-                //添加撤回修改提示
-                wx.showToast({
-                  title: '撤回成功',
-                  icon: 'success',
-                  duration: 3000
-                })
-              } else {
-                wx.showToast({
-                  title: '撤回失败！',
-                  icon: 'none',
-                  duration: 3000
-                })
-              }
-            }
-          })
-        } else if (sm.cancel) {
-          //用户点击了取消
-        }
-      }
-    })
-
-  },
 
   //作废按钮
-  zuofei: function () {
+  zuofei: function() {
     let that = this;
     let _htph = that.data.htph;
     wx.showModal({
       title: '提示',
       content: '确定要作废吗？',
-      success: function (sm) {
+      success: function(sm) {
         if (sm.confirm) {
           // 用户点击了确定
           wx.request({
@@ -152,7 +120,7 @@ Page({
             data: {
               htph: _htph
             },
-            success: function (res) {
+            success: function(res) {
               if (res.data != 0) {
                 //添加修改提示
                 wx.showToast({
@@ -178,13 +146,13 @@ Page({
   },
 
   //金额输入
-  jechange: function (e) {
+  jechange: function(e) {
     let that = this;
-    let _dj = e.detail.value;
+    let _je = e.detail.value;
     let _htmx = that.data.htmx;
     for (let i = 0; i < _htmx.length; i++) {
-      _htmx[i]["dj"] = _dj;
-      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
+      _htmx[i]["je"] = _je;
+      _htmx[i]["sl"] = _htmx[i]["je"] / _htmx[i]["dj"]
     }
     that.setData({
       htmx: _htmx
@@ -203,7 +171,7 @@ Page({
 
     //将单据编号写入data
     that.setData({
-      htph:res.htph
+      htph: res.htph
     });
 
     //初始化日期
@@ -307,6 +275,13 @@ Page({
           }
         })
 
+        //设置合同的数量，单价和金额       
+        that.setData({
+          cpname: res.data[0]["cpname"],          
+          dj1: res.data[0]["dj"],
+          sl1: res.data[0]["sl"],
+          je1: res.data[0]["je"],
+        })
         //设置data数据
         that.setData({
           htmx: _htmx,

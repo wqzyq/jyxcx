@@ -64,7 +64,7 @@ Page({
         if (sm.confirm) {
           // 用户点击了提交 
           wx.request({
-            url: config.URL + '/givechecktj1',
+            url: config.URL + '/givechecktj2',
             method: 'POST',
             data: {
               htph:that.data.htph,
@@ -106,7 +106,7 @@ Page({
         if (sm.confirm) {
           // 用户点击了撤回
           wx.request({
-            url: config.URL + '/givecheckch1',
+            url: config.URL + '/givecheckch2',
             method: 'POST',
             data: {
               htph:_htph
@@ -136,7 +136,46 @@ Page({
 
   },
 
-  
+  //作废按钮
+  zuofei: function () {
+    let that = this;
+    let _htph = that.data.htph;
+    wx.showModal({
+      title: '提示',
+      content: '确定要作废吗？',
+      success: function (sm) {
+        if (sm.confirm) {
+          // 用户点击了确定
+          wx.request({
+            url: config.URL + '/givecheckzf2',
+            method: 'POST',
+            data: {
+              htph: _htph
+            },
+            success: function (res) {
+              if (res.data != 0) {
+                //添加修改提示
+                wx.showToast({
+                  title: '作废成功',
+                  icon: 'success',
+                  duration: 3000
+                })
+              } else {
+                wx.showToast({
+                  title: '作废失败！',
+                  icon: 'none',
+                  duration: 3000
+                })
+              }
+            }
+          })
+        } else if (sm.cancel) {
+          //用户点击了取消
+        }
+      }
+    })
+
+  },
 
   //单据初始化
   onLoad: function(res) {

@@ -1,8 +1,12 @@
 {
   "pages": [
+    "pages/caiwu/caiwumx",
     "pages/index/index",
+    "pages/caiwu/caiwunr",
     "pages/check1/check1mx",
+    "pages/check2/check2mx",
     "pages/check1/check1nr",
+    "pages/check2/check2nr",
     "pages/hetong/htmingxi",
     "pages/hetong/hetong",  
     "pages/newadd/newadd",
@@ -11,8 +15,7 @@
     "pages/13/test13",
     "pages/notify/notify",
     "pages/confirm/confirm",
-    "pages/send/send",
-    "pages/check2/check2",
+    "pages/send/send",  
     "pages/cardebug/cardebug",
     "pages/carsel/carsel",
     "pages/logs/logs",

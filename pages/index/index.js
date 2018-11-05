@@ -22,20 +22,20 @@ Page({
       },
       {
         name: '复核2',
-        url: '/pages/check2/check2',
+        url: '/pages/check2/check2mx',
         icon: '../../imgs/fuhe2.png',
         code: '10'
       },
       {
-        name: '选车',
+        name: '财务',
         url: '/pages/carsel/carsel',
-        icon: '../../imgs/test1.png',
+        icon: '../../imgs/chediao.png',
         code: '11'
       },
       {
         name: '车调',
         url: '/pages/cardebug/cardebug',
-        icon: '../../imgs/chediao.png',
+        icon: '../../imgs/test1.png',
         code: '10'
       },
       {

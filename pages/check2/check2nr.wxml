@@ -1,11 +1,12 @@
 <!--pages/hetong/hetong.wxml-->
-<view class="head">复核一流程</view>
+<view class="head">复核二流程</view>
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view wx:for="{{htmx}}" wx:key="unique"> 
     <view class="content">
       <view class="vadd">      
         <button class='vbtn' type="primary" formType="submit">提交</button>
-       <button class='vbtn' type="warn" bindtap='chehui'>撤回</button>       
+       <button class='vbtn' type="warn" bindtap='chehui'>撤回</button>
+         <button class='vbtn' type="warn" bindtap='zuofei'>作废</button>
         <input class='vbtn' name="crtime" value='{{crtime}}' disabled='true'></input>
       </view>
       <view class='line'></view>

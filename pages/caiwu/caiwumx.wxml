@@ -1,0 +1,40 @@
+<!--pages/hetong/htmingxi.wxml-->
+<view class="head">财务费用管理</view>
+<view class='txtkh'>
+  <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号" bindinput='phinput'></input>
+</view>
+<view class='line'></view>
+<view class='txtkh'>
+  <input name='khmc' type='text' value='{{khmc}}' placeholder="客户名称" bindinput='mcinput'></input>
+</view>
+<view class='line'></view>
+<radio-group class="radio-group"  bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}" wx:key="{{unique}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+  </label>
+</radio-group>
+<view class='btncs'>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="btncs"> 查询按钮 </button>
+</view>
+
+<!--产品显示-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th ">客户名称</view>
+    <view class="th ">产品名称</view>
+    <view class="th ">数量</view>
+  </view>
+  <view wx:for="{{arrsjmx}}" wx:key="{{unique}}">
+    <view class="tr bg-g">
+      <view class="td" data-htph="{{item.htph}}" bindtap='tomingxi'>
+        <text> {{item.khmc}}</text>
+      </view>
+      <view class="td">
+        <text> {{item.cpname}}</text>
+      </view>
+      <view class="td">
+        <text> {{item.sl}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -34,7 +34,7 @@ Page({
       },
       {
         name: '车调',
-        url: '/pages/cardebug/cardebug',
+        url: '/pages/carsel/carsel',
         icon: '../../imgs/test1.png',
         code: '10'
       },

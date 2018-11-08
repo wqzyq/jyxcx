@@ -21,6 +21,7 @@
       </picker>
     </view>
   </view>
+  
   <button bindtap='btntest'>增加产品</button>
   <view class='v1'></view>
   <block wx:for="{{listData}}" wx:key="{{PrName}}">

@@ -65,14 +65,28 @@
       </label>
     </radio-group>
     <view class='line'></view>
-    <view class='selpro'>   
+   
+    <view class='selpro'>
       <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
         <view class="picker1">
           {{cps[cpId]}}
         </view>
       </picker>
-      <button class='pickadd' bindtap='btntest' type="primary">增加产品</button>
+      <!--仓库情况-->
+      <radio-group name='ck' class="radio-group" bindchange='ckchange'>
+        <label class="radio1" wx:for="{{items}}" wx:key="{{index}}">
+          <radio class="ravalue" value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}
+        </label>
+      </radio-group>
     </view>
+    <!--数量，产品，金额-->
+    <view class='selpro1'>   
+      <input name='sl' value='' bindchange='slchange' placeholder="数量"></input>
+     
+      <input name='dj' value='' bindchange='djchange' placeholder="单价"></input>     
+      <input name='je' value='{{je}}'></input>
+    </view>
+     <button class='btnAdd' type="primary" bindtap='btnAdd'>增加产品</button>
     <!--产品显示-->
     <view class="table">
       <view class="tr bg-w">
@@ -84,27 +98,29 @@
         <view class="th">操作</view>
       </view>
     </view>
-  
     <block wx:for="{{listData}}" wx:key="unique">
-    <view wx:if="{{listData.length > 1}}"> <view class="tr bg-g">
+      <view class="tr bg-g">
         <view class="td">
-          <input name='PrName' value='{{item.prName}}'></input>
-        </view>
-        <view class="td">0</view>
-        <view class="td">
-          <input name='sl{{item.id}}' value='0'></input>
+          <input name='PrName' value='{{item.prName}}' disabled='true'></input>
         </view>
         <view class="td">
-          <input value='0' name='dj{{item.id}}'></input>
+          <input name='sl{{item.id}}' value='{{item.sl}}' bindchange='slchange'></input>
         </view>
         <view class="td">
-          <input value='0' name='je{{item.id}}'></input>
+          <input name='dj{{item.dj}}' value='{{item.dj}}' bindchange='djchange'></input>
+        </view>
+        <view class="td">
+          <input value='{{item.je}}' name='{{item.je}}' disabled='true'></input>
+        </view>
+        <view class="td">
+          <input value='{{item.ckName}}' name='{{item.ckName}}'></input>
         </view>
         <view class="td">
           <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
         </view>
-      </view></view>   
-    <view wx:else>  暂未添加产品 </view>    
+      </view>
+
+
     </block>
   </view>
 </form>

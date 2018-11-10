@@ -135,8 +135,7 @@
 }
 
 .pickadd{
-  height: 80rpx;
-  margin-right: 150rpx;
+  height: 80rpx; 
   width: 200rpx;
 }
 .selpro{
@@ -144,7 +143,21 @@
   flex-direction: row;
   height: 80rpx;
 }
-.picker1{
-  line-height: 80rpx;
-  margin-left: 150rpx;
+.picker1{  
+  line-height: 80rpx; 
+}
+
+.radio1{
+  line-height: 80rpx; 
+}
+.selpro1{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.text1{
+  width: 100rpx;
 }

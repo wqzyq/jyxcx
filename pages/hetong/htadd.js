@@ -9,6 +9,8 @@ Page({
     index: 0,
     xsdbs: [],
     cps: [],
+    listData: [],
+    ckName:'罐区',
     crtime: '',
     xsdbId: 0,
     cpId: 0,
@@ -18,7 +20,7 @@ Page({
     winWidth: 0,
     winHeight: 0,
     items: [{
-        name: '装置',
+        name: '罐区',
         checked: 'true'
       },
       {
@@ -36,7 +38,7 @@ Page({
         name: '自提',
       },
     ],
-    listData: [{}],
+
   },
 
   //input的值
@@ -54,7 +56,7 @@ Page({
 
 
   //新增按钮
-  btnAdd: function() {
+  btnNew: function() {
     let that = this;
     that.setData({
       htph: '',
@@ -210,24 +212,33 @@ Page({
       cpId: e.detail.value
     })
   },
-
+  //仓库选择
+  ckchange: function(e) {   
+    this.setData({
+      ckName:e.detail.value
+    })
+  },
   //增加产品
-  btntest: function(e) {
-    let cps = this.data.cps;
-    let list = this.data.listData;
-    let _cpid = this.data.cpId; 
-  
+  btnAdd: function(e) {
+    let that = this;
+    let cps = that.data.cps;
+    let list = that.data.listData;
+    let _cpid = that.data.cpId;
+    let _sl = that.data.sl;
+    let _dj = that.data.dj;
+    let _je = that.data.je;
+    let _ckName=that.data.ckName;
+
     list.push({
       id: cps[_cpid],
       prName: cps[_cpid],
       Model: cps[_cpid],
-    });   
-    if(list[0]==null){
-      delete list[0];
-    }
-   
-    console.log(list);
-    this.setData({
+      sl: _sl,
+      dj: _dj,
+      je: _je,
+      ckName:_ckName
+    });
+    that.setData({
       listData: list,
     })
   },

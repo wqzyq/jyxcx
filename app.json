@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/hetong/htadd",
     "pages/13/test13",
     "pages/14/test14",
-    "pages/hetong/htadd",
     "pages/index/index",
     "pages/T15/T15",
     "pages/carsel/carsel",

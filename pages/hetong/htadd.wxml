@@ -22,6 +22,7 @@
     <view class='txtkh'>
       <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号"></input>
     </view>
+    <!-- 
     <view class='line'></view>
     <view class='txtkh'>
       <input name='khmc' type='text' value='{{khmc}}' placeholder="客户名称"></input>
@@ -35,7 +36,9 @@
       <input name='htqx' type='text' value='{{htqx}}' placeholder="合同期限"></input>
     </view>
 
+
     <!--收款信息-->
+    <!--
     <view class='line'></view>
     <view class='txtkh'>
       <input name='shdz' type='text' value='{{shdz}}' placeholder="收货地址"></input>
@@ -52,7 +55,8 @@
     <view class='line'></view>
     <view class='txtkh'>
       <input name='bz' type='text' value='{{bz2}}' placeholder="备注"></input>
-    </view>
+    </view>     
+    -->
     <view class='line'></view>
     <!--提货情况-->
     <radio-group name='fhfs' class="radio-group">
@@ -61,8 +65,14 @@
       </label>
     </radio-group>
     <view class='line'></view>
-
-    <button bindtap='btntest' type="primary">增加产品</button>
+    <view class='selpro'>   
+      <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
+        <view class="picker1">
+          {{cps[cpId]}}
+        </view>
+      </picker>
+      <button class='pickadd' bindtap='btntest' type="primary">增加产品</button>
+    </view>
     <!--产品显示-->
     <view class="table">
       <view class="tr bg-w">
@@ -74,14 +84,11 @@
         <view class="th">操作</view>
       </view>
     </view>
-    <block wx:for="{{listData}}" wx:key="{{PrName}}">
-      <view class="tr bg-g">
+  
+    <block wx:for="{{listData}}" wx:key="unique">
+    <view wx:if="{{listData.length > 1}}"> <view class="tr bg-g">
         <view class="td">
-          <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
-            <view class="picker">
-              {{cps[cpId]}}
-            </view>
-          </picker>
+          <input name='PrName' value='{{item.prName}}'></input>
         </view>
         <view class="td">0</view>
         <view class="td">
@@ -96,7 +103,8 @@
         <view class="td">
           <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
         </view>
-      </view>
+      </view></view>   
+    <view wx:else>  暂未添加产品 </view>    
     </block>
   </view>
 </form>

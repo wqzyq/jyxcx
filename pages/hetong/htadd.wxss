@@ -133,3 +133,18 @@
 .btnSelPro {
   margin-top: 25rpx;
 }
+
+.pickadd{
+  height: 80rpx;
+  margin-right: 150rpx;
+  width: 200rpx;
+}
+.selpro{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+}
+.picker1{
+  line-height: 80rpx;
+  margin-left: 150rpx;
+}

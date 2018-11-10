@@ -6,7 +6,7 @@ Page({
    */
   data: {
     URL: config.URL,
-    index:0,
+    index: 0,
     xsdbs: [],
     cps: [],
     crtime: '',
@@ -37,7 +37,6 @@ Page({
       },
     ],
     listData: [{}],
-
   },
 
   //input的值
@@ -206,33 +205,35 @@ Page({
   //产品Id
   cpPickerChange: function(e) {
     let cpId = this.data.cpId;
+
     this.setData({
       cpId: e.detail.value
     })
   },
 
   //增加产品
-  btntest: function(e) {  
+  btntest: function(e) {
     let cps = this.data.cps;
     let list = this.data.listData;
-    let index = this.data.index;
-    let indexaa;
-    indexaa=index+1;
-    console.log(indexaa);
+    let _cpid = this.data.cpId; 
+  
     list.push({
-      id: cps[index],
-      prName: cps[index],
-      Model: cps[index],
-    });
+      id: cps[_cpid],
+      prName: cps[_cpid],
+      Model: cps[_cpid],
+    });   
+    if(list[0]==null){
+      delete list[0];
+    }
+   
+    console.log(list);
     this.setData({
       listData: list,
-      index:indexaa
     })
   },
   //删除选项
   deleteIitems(e) {
     let idx = e.currentTarget.dataset.idx
-    console.log(idx);
     let list = this.data.listData
     let filterRes = list.filter((ele, index) => {
       return index != idx

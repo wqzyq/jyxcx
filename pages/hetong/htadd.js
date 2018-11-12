@@ -77,6 +77,7 @@ Page({
 
   //提交按钮
   formSubmit: function(e) {
+    let _listData=this.data.listData;
     wx.showModal({
       title: '提示',
       content: '确定要提交吗？',
@@ -87,9 +88,11 @@ Page({
             url: config.URL + '/giveht',
             method: 'POST',
             data: {
-              htsj: e.detail.value
+              htsj: e.detail.value,
+              listData:_listData
             },
             success: function(res) {
+              console.log(res);
               if (res.data == 1) {
                 //添加成功提示
                 wx.showToast({

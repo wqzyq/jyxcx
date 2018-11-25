@@ -22,7 +22,7 @@
     <view class='txtkh'>
       <input name='htph' type='text' value='{{htphvalue}}' placeholder="请输入合同编号"></input>
     </view>
-    <!-- 
+   
     <view class='line'></view>
     <view class='txtkh'>
       <input name='khmc' type='text' value='{{khmc}}' placeholder="客户名称"></input>
@@ -38,7 +38,7 @@
 
 
     <!--收款信息-->
-    <!--
+    
     <view class='line'></view>
     <view class='txtkh'>
       <input name='shdz' type='text' value='{{shdz}}' placeholder="收货地址"></input>
@@ -56,7 +56,7 @@
     <view class='txtkh'>
       <input name='bz' type='text' value='{{bz2}}' placeholder="备注"></input>
     </view>     
-    -->
+   
     <view class='line'></view>
     <!--提货情况-->
     <radio-group name='fhfs' class="radio-group">
@@ -70,8 +70,9 @@
       <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
         <view class="picker1">
           {{cps[cpId]}}
-        </view>
+        </view>       
       </picker>
+      
       <!--仓库情况-->
       <radio-group name='ck' class="radio-group" bindchange='ckchange'>
         <label class="radio1" wx:for="{{items}}" wx:key="{{index}}">
@@ -79,6 +80,7 @@
         </label>
       </radio-group>
     </view>
+
     <!--数量，产品，金额-->
     <view class='selpro1'>   
       <input name='sl' value='' bindchange='slchange' placeholder="数量"></input>
@@ -119,8 +121,6 @@
           <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
         </view>
       </view>
-
-
     </block>
   </view>
 </form>

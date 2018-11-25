@@ -85,7 +85,7 @@ Page({
         if (sm.confirm) {
           // 用户点击了提交 
           wx.request({
-            url: config.URL + '/giveht',
+            url: config.URL + '/hetongadd',
             method: 'POST',
             data: {
               htsj: e.detail.value,

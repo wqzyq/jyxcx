@@ -71,8 +71,7 @@
         <view class="picker1">
           {{cps[cpId]}}
         </view>       
-      </picker>
-      
+      </picker>      
       <!--仓库情况-->
       <radio-group name='ck' class="radio-group" bindchange='ckchange'>
         <label class="radio1" wx:for="{{items}}" wx:key="{{index}}">
@@ -80,11 +79,9 @@
         </label>
       </radio-group>
     </view>
-
     <!--数量，产品，金额-->
     <view class='selpro1'>   
-      <input name='sl' value='' bindchange='slchange' placeholder="数量"></input>
-     
+      <input name='sl' value='' bindchange='slchange' placeholder="数量"></input>     
       <input name='dj' value='' bindchange='djchange' placeholder="单价"></input>     
       <input name='je' value='{{je}}'></input>
     </view>

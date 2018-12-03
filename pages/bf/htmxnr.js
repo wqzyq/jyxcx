@@ -9,8 +9,6 @@ Page({
     htph: '',
     htmx: [],
     xsdbs: [],
-    listData: [],
-    ckName: '罐区',
     cps: [],
     crtime: '',
     xsdbId: 0,
@@ -21,8 +19,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     items: [{
-        name: '罐区',
-        checked: true
+        name: '装置',
+        checked: false
       },
       {
         name: '仓库',
@@ -71,7 +69,7 @@ Page({
               htsj: e.detail.value
             },
             success: function(res) {
-              if (res.data != 0) {
+              if (res.data !=0 ) {
                 //添加成功修改提示
                 wx.showToast({
                   title: '提交修改成功',
@@ -94,7 +92,33 @@ Page({
     })
 
   },
+  //数量输入
+  slchange: function(e) {
+    let that = this;
+    let _sl = e.detail.value;
+    let _htmx = that.data.htmx;
+    for (let i = 0; i < _htmx.length; i++) {
+      _htmx[i]["sl"] = _sl;
+      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
+    }
+    that.setData({
+      htmx: _htmx
+    })
+  },
 
+  //单价输入
+  djchange: function(e) {
+    let that = this;
+    let _dj = e.detail.value;
+    let _htmx = that.data.htmx;
+    for (let i = 0; i < _htmx.length; i++) {
+      _htmx[i]["dj"] = _dj;
+      _htmx[i]["je"] = _htmx[i]["dj"] * _htmx[i]["sl"]
+    }
+    that.setData({
+      htmx: _htmx
+    })
+  },
 
   //单据初始化
   onLoad: function(res) {
@@ -124,10 +148,20 @@ Page({
         });
       }
     })
+    //从数据库获取产品
+    wx.request({
+      url: config.URL + '/getcp',
+      success: function(res) {
+        for (let i = 0; i < res.data.length; i++) {
+          recps.push(res.data[i].name);
+        }
+        that.setData({
+          cps: recps
+        });
+      }
+    })
 
-
-
-    //从数据库获取该合同表头的所有信息
+    //从数据库获取该合同的所有信息
     wx.request({
       url: config.URL + '/gethtmx',
       data: {
@@ -137,34 +171,6 @@ Page({
         for (let i = 0; i < res.data.length; i++) {
           _htmx.push(res.data[i]);
         }
-
-        //设置销售代表的xsdbId
-        let _xsdbId = 0;
-        wx.request({
-          url: config.URL + '/getxsdbid',
-          data: {
-            xsdb: _htmx[0]["xsdb"]
-          },
-          success: function(res) {
-            _xsdbId = res.data;
-            that.setData({
-              xsdbId: _xsdbId
-            })
-          }
-        })
-
-        //从数据库获取产品
-        wx.request({
-          url: config.URL + '/getcp',
-          success: function (res) {
-            for (let i = 0; i < res.data.length; i++) {
-              recps.push(res.data[i].name);
-            }
-            that.setData({
-              cps: recps
-            });
-          }
-        })
         //修改提货方式checked
         let _thitems = that.data.thitems;
         if (_htmx[0]["fhfs"] == "发货") {
@@ -194,6 +200,35 @@ Page({
             _items[2]["checked"] = true;
             break;
         }
+        //设置销售代表的xsdbId
+        let _xsdbId = 0;
+        wx.request({
+          url: config.URL + '/getxsdbid',
+          data: {
+            xsdb: _htmx[0]["xsdb"]
+          },
+          success: function(res) {
+            _xsdbId = res.data;
+            that.setData({
+              xsdbId: _xsdbId
+            })
+          }
+        })
+
+        //获取产品cpId
+        let _cpId = 0;
+        wx.request({
+          url: config.URL + '/getcpid',
+          data: {
+            cpname: _htmx[0]["cpname"]
+          },
+          success: function(res) {
+            _cpId = res.data;
+            that.setData({
+              cpId: _cpId
+            })
+          }
+        })
 
         //设置data数据
         that.setData({
@@ -203,11 +238,6 @@ Page({
         });
       }
     })
-
-    //从数据库获取该合同表体的所有信息
-    // wx.request({
-    //   url: '',
-    // })
 
     /**
      * 获取系统信息
@@ -223,7 +253,7 @@ Page({
   },
 
   //销售代表Id
-  bindPickerChange: function (e) {
+  bindPickerChange: function(e) {
     let xsdbId = this.data.xsdbId;
     this.setData({
       xsdbId: e.detail.value
@@ -231,84 +261,10 @@ Page({
   },
 
   //产品Id
-  cpPickerChange: function (e) {
+  cpPickerChange: function(e) {
     let cpId = this.data.cpId;
-
     this.setData({
       cpId: e.detail.value
     })
   },
-  //仓库选择
-  ckchange: function (e) {
-    this.setData({
-      ckName: e.detail.value
-    })
-  },
-  //增加产品
-  btnAdd: function (e) {
-    let that = this;
-    let cps = that.data.cps;
-    let list = that.data.listData;
-    let _cpid = that.data.cpId;
-    let _sl = that.data.sl;
-    let _dj = that.data.dj;
-    let _je = that.data.je;
-    let _ckName = that.data.ckName;
-
-    list.push({
-      id: cps[_cpid],
-      prName: cps[_cpid],
-      Model: cps[_cpid],
-      sl: _sl,
-      dj: _dj,
-      je: _je,
-      ckName: _ckName
-    });
-    that.setData({
-      listData: list,
-    })
-  },
-  //删除选项
-  deleteIitems(e) {
-    let idx = e.currentTarget.dataset.idx
-    let list = this.data.listData
-    let filterRes = list.filter((ele, index) => {
-      return index != idx
-    })
-    this.setData({
-      listData: filterRes
-    })
-  },
-
-  //数量输入
-  slchange: function (e) {
-    let that = this;
-    let _sl = e.detail.value;
-    let sl = that.data.sl;
-    let dj = that.data.dj;
-    let je = that.data.je;
-    that.setData({
-      sl: _sl
-    })
-    that.setData({
-      je: _sl * dj
-    })
-
-  },
-
-  //单价输入
-  djchange: function (e) {
-    let that = this;
-    let _dj = e.detail.value;
-    let sl = that.data.sl;
-    let dj = that.data.dj;
-    let je = that.data.je;
-    that.setData({
-      dj: _dj
-    })
-    that.setData({
-      je: sl * _dj
-    })
-  },
-
 })

@@ -65,7 +65,7 @@
       </label>
     </radio-group>
     <view class='line'></view>
-   
+   <!--产品选择-->
     <view class='selpro'>
       <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
         <view class="picker1">

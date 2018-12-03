@@ -16,7 +16,7 @@
 <view class='btncs'>
   <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="btncs"> 查询按钮 </button>
 </view>
-<navigator  class="navht" url="/pages/hetong/hetong">新增按钮</navigator>
+<navigator  class="navht" url="/pages/hetong/htadd">新增按钮</navigator>
 
 
 <!--产品显示-->

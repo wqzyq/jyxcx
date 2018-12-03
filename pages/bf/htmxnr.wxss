@@ -134,30 +134,9 @@
   margin-top: 25rpx;
 }
 
-.pickadd{
-  height: 80rpx; 
-  width: 200rpx;
+.navadd{
+  width: 230rpx;
 }
-.selpro{
-  display: flex;
-  flex-direction: row;
-  height: 80rpx;
-}
-.picker1{  
-  line-height: 80rpx; 
-}
-
-.radio1{
-  line-height: 80rpx; 
-}
-.selpro1{
-  display: flex;
-  flex-direction: row;
-  height: 80rpx;
-  width: 100%;
-  text-align: center;
-}
-
-.text1{
-  width: 100rpx;
+.txtbt{
+  width: 150rpx;
 }

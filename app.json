@@ -2,10 +2,12 @@
   "pages": [
     "pages/hetong/htmingxi",
     "pages/hetong/htadd",
+    "pages/hetong/htmxnr",
+    "pages/bf/htmxnr",
     "pages/13/test13",
     "pages/14/test14",
     "pages/index/index",
-    "pages/T15/T15",
+    "pages/T15/T15", 
     "pages/carsel/carsel",
     "pages/caiwu/caiwumx",
     "pages/caiwu/caiwunr",
@@ -13,15 +15,14 @@
     "pages/check2/check2mx",
     "pages/check1/check1nr",
     "pages/check2/check2nr",
-    "pages/hetong/hetong",
+    "pages/bf/hetong",
     "pages/newadd/newadd",
     "pages/notify/notify",
     "pages/confirm/confirm",
     "pages/send/send",
     "pages/cardebug/cardebug",
     "pages/logs/logs",
-    "pages/my/my",
-    "pages/hetong/htmxnr"
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",

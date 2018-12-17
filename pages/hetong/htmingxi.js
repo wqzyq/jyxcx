@@ -25,7 +25,7 @@ Page({
 
   //到明细页面
   tomingxi: function(e) {
-    console.log(e);
+    //console.log(e);
     let _htph = '';
     _htph = e.currentTarget.dataset.htph;
     wx.navigateTo({

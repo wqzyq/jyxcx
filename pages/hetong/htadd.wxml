@@ -100,7 +100,7 @@
     <block wx:for="{{listData}}" wx:key="unique">
       <view class="tr bg-g">
         <view class="td">
-          <input name='PrName' value='{{item.prName}}' disabled='true'></input>
+          <input name='cpname' value='{{item.cpname}}' disabled='true'></input>
         </view>
         <view class="td">
           <input name='sl{{item.id}}' value='{{item.sl}}' bindchange='slchange'></input>
@@ -112,7 +112,7 @@
           <input value='{{item.je}}' name='{{item.je}}' disabled='true'></input>
         </view>
         <view class="td">
-          <input value='{{item.ckName}}' name='{{item.ckName}}'></input>
+          <input value='{{item.ck}}' name='{{item.ck}}'></input>
         </view>
         <view class="td">
           <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>

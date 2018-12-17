@@ -10,7 +10,7 @@ Page({
     xsdbs: [],
     cps: [],
     listData: [],
-    ckName:'罐区',
+    ck: '罐区',
     crtime: '',
     xsdbId: 0,
     cpId: 0,
@@ -77,44 +77,53 @@ Page({
 
   //提交按钮
   formSubmit: function(e) {
-    let _listData=this.data.listData;
-    wx.showModal({
-      title: '提示',
-      content: '确定要提交吗？',
-      success: function(sm) {
-        if (sm.confirm) {
-          // 用户点击了提交 
-          wx.request({
-            url: config.URL + '/hetongadd',
-            method: 'POST',
-            data: {
-              htsj: e.detail.value,
-              listData:_listData
-            },
-            success: function(res) {
-              console.log(res);
-              if (res.data == 1) {
-                //添加成功提示
-                wx.showToast({
-                  title: '提交成功',
-                  icon: 'success',
-                  duration: 3000
-                })
-              } else {
-                wx.showToast({
-                  title: '提交失败,有可能重复提交或者必填字段为空，请检查！',
-                  icon: 'none',
-                  duration: 3000
-                })
+    let _listData = this.data.listData;
+    let htph = e.detail.value.htph;
+    let khmc = e.detail.value.khmc;
+    if (_listData == "" || htph == "" || khmc == "") {
+      wx.showToast({
+        title: '必填字段不能为空，请检查！',
+        icon: 'none',
+        duration: 3000
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '确定要提交吗？',
+        success: function(sm) {
+          if (sm.confirm) {
+            // 用户点击了提交 
+            wx.request({
+              url: config.URL + '/hetongadd',
+              method: 'POST',
+              data: {
+                htsj: e.detail.value,
+                listData: _listData
+              },
+              success: function(res) {
+                //console.log(res);
+                if (res.data == 1) {
+                  //添加成功提示
+                  wx.showToast({
+                    title: '提交成功',
+                    icon: 'success',
+                    duration: 3000
+                  })
+                } else {
+                  wx.showToast({
+                    title: '提交失败,有可能重复提交或者必填字段为空，请检查！',
+                    icon: 'none',
+                    duration: 3000
+                  })
+                }
               }
-            }
-          })
-        } else if (sm.cancel) {
-          //用户点击了取消
+            })
+          } else if (sm.cancel) {
+            //用户点击了取消
+          }
         }
-      }
-    })
-
+      })
+    }
   },
   //数量输入
   slchange: function(e) {
@@ -216,9 +225,9 @@ Page({
     })
   },
   //仓库选择
-  ckchange: function(e) {   
+  ckchange: function(e) {
     this.setData({
-      ckName:e.detail.value
+      ck: e.detail.value
     })
   },
   //增加产品
@@ -230,16 +239,16 @@ Page({
     let _sl = that.data.sl;
     let _dj = that.data.dj;
     let _je = that.data.je;
-    let _ckName=that.data.ckName;
+    let _ck = that.data.ck;
 
     list.push({
       id: cps[_cpid],
-      prName: cps[_cpid],
+      cpname: cps[_cpid],
       Model: cps[_cpid],
       sl: _sl,
       dj: _dj,
       je: _je,
-      ckName:_ckName
+      ck: _ck
     });
     that.setData({
       listData: list,

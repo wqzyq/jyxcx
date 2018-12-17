@@ -31,7 +31,7 @@
 }
 
 .vbtn {
-  margin-left: 25rpx;
+  margin-left: 15rpx;
   height: 60rpx;
   line-height: 60rpx;
   text-align: center;

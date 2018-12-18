@@ -71,13 +71,9 @@
         </label>
       </radio-group>
       <view class='line'></view>
-      <!--产品选择-->
+      <!--产品-->
       <view class='selpro'>
-        <picker name='cpname' bindchange="cpPickerChange" value="{{cps[cpId]}}" range="{{cps}}">
-          <view class="picker1">
-            {{cps[cpId]}}
-          </view>
-        </picker>
+        <input class="txtcpname" name='cpname' type='text' value='{{cpname}}' disabled='true'></input>
         <!--仓库情况-->
         <radio-group name='ck' class="radio-group" bindchange='ckchange'>
           <label class="radio1" wx:for="{{items}}" wx:key="{{index}}">
@@ -88,44 +84,10 @@
     </view>
     <!--数量，产品，金额-->
     <view class='selpro1'>
-      <input name='sl' value='' bindchange='slchange' placeholder="数量"></input>
-      <input name='dj' value='' bindchange='djchange' placeholder="单价"></input>
-      <input name='je' value='{{je}}'></input>
-    </view>
-    <button class='btnAdd' type="primary" bindtap='btnAdd'>增加产品</button>
-    <!--产品显示-->
-    <view class="table">
-      <view class="tr bg-w">
-        <view class="th">产品</view>
-        <view class="th">数量</view>
-        <view class="th">单价</view>
-        <view class="th">金额</view>
-        <view class="th">仓库</view>
-        <view class="th">操作</view>
-      </view>
-    </view>
-    <block wx:for="{{listData}}" wx:key="unique">
-      <view class="tr bg-g">
-        <view class="td">
-          <input name='cpname' value='{{item.cpname}}' disabled='true'></input>
-        </view>
-        <view class="td">
-          <input name='sl{{item.id}}' value='{{item.sl}}' bindchange='slchange'></input>
-        </view>
-        <view class="td">
-          <input name='dj{{item.dj}}' value='{{item.dj}}' bindchange='djchange'></input>
-        </view>
-        <view class="td">
-          <input value='{{item.je}}' name='{{item.je}}' disabled='true'></input>
-        </view>
-        <view class="td">
-          <input value='{{item.ck}}' name='{{item.ck}}'></input>
-        </view>
-        <view class="td">
-          <text class='delete-btn' data-idx='{{index}}' bindtap='deleteIitems'>删除</text>
-        </view>
-      </view>
-
-    </block>
-  </view>
+      <input name='sl' value='{{sl}}' bindchange='slchange' placeholder="数量"></input>
+      <input name='dj' value='{{dj}}' bindchange='djchange' placeholder="单价"></input>
+      <input name='je' value='{{je}}' disabled='true'></input>
+    </view>    
+  </view>                       
+  
 </form>

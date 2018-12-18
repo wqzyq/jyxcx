@@ -26,10 +26,11 @@ Page({
   //到明细页面
   tomingxi: function(e) {
     //console.log(e);
-    let _htph = '';
-    _htph = e.currentTarget.dataset.htph;
+    let _htph = e.currentTarget.dataset.htph;
+    let _finterid = e.currentTarget.dataset.finterid;
+    let _fentryid = e.currentTarget.dataset.fentryid;
     wx.navigateTo({
-      url: 'htmxnr?htph=' + _htph,
+      url: 'htmxnr?htph=' + _htph + "&finterid=" + _finterid + "&fentryid=" + _fentryid
     })
   },
 
@@ -70,7 +71,7 @@ Page({
       success: function(res) {
         for (let i = 0; i < res.data.length; i++) {
           _arrsjmx.push(res.data[i]);
-        }     
+        }
         that.setData({
           arrsjmx: _arrsjmx
         });
@@ -101,6 +102,6 @@ Page({
     })
   },
 
-  
+
 
 })

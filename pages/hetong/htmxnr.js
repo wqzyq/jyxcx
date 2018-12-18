@@ -10,7 +10,7 @@ Page({
     htmx: [],
     xsdbs: [],
     listData: [],
-    ck: '罐区',
+    ck: '',
     cps: [],
     crtime: '',
     xsdbId: 0,
@@ -20,9 +20,10 @@ Page({
     je: 0,
     winWidth: 0,
     winHeight: 0,
+    cpname:'',   
     items: [{
         name: '罐区',
-        checked: true
+        checked: false
       },
       {
         name: '仓库',
@@ -86,8 +87,11 @@ Page({
 
   //单据初始化
   onLoad: function(res) {
+    console.log(res);
     var that = this;
-    let _htph = res.htph;
+    let _htph = res.htph;  //获取传递过来的合同号
+    let _finterid=res.finterid;//获取传递过来的单据内码
+    let _fentryid=res.fentryid;//获取传递过来的行号`
     let _xsdbs = [];
     let recps = [];
     let crtime = that.data.crtime;
@@ -119,16 +123,46 @@ Page({
       url: config.URL + '/gethtentry',
       method: 'POST',
       data: {
-        htph: _htph
+        htph: _htph,
+        finterid:_finterid,
+        fentryid:_fentryid
       },
-      success: function (res) {   
-        //console.log(res);   
+      success: function (res) {
+        console.log(res);
         for (let i = 0; i < res.data.length; i++) {
           _listData.push(res.data[i]);
         }
+
+        //修改仓库的checked
+        let _items = that.data.items;
+        switch (_listData[0]["ck"]) {
+          case "罐区":
+            _items[0]["checked"] = true;
+            _items[1]["checked"] = false;
+            _items[2]["checked"] = false;
+            break;
+          case "仓库":
+            _items[0]["checked"] = false;
+            _items[1]["checked"] = true;
+            _items[2]["checked"] = false;
+            break;
+          default:
+            _items[0]["checked"] = false;
+            _items[1]["checked"] = false;
+            _items[2]["checked"] = true;
+            break;
+        }
+
         that.setData({
-          listData: _listData
+          cpname: _listData[0]["cpname"],
+          sl: _listData[0]["sl"],
+          dj: _listData[0]["dj"],
+          je: _listData[0]["je"],
+          ck: _listData[0]["ck"],
+          items: _items,
         })
+
+        
       }
     })
 
@@ -181,31 +215,12 @@ Page({
       _thitems[1]["checked"] = true;
     }
 
-    //修改仓库的checked
-    let _items = that.data.items;
-    switch (_htmx[0]["ck"]) {
-      case "装置":
-        _items[0]["checked"] = true;
-        _items[1]["checked"] = false;
-        _items[2]["checked"] = false;
-        break;
-      case "仓库":
-        _items[0]["checked"] = false;
-        _items[1]["checked"] = true;
-        _items[2]["checked"] = false;
-        break;
-      default:
-        _items[0]["checked"] = false;
-        _items[1]["checked"] = false;
-        _items[2]["checked"] = true;
-        break;
-    }
+    
 
     //设置data数据
     that.setData({
       htmx: _htmx,
-      thitems: _thitems,
-      items: _items,
+      thitems: _thitems,    
     });
   }
 

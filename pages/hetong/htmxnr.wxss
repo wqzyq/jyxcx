@@ -161,3 +161,10 @@
 .text1{
   width: 100rpx;
 }
+
+.txtcpname
+{
+  width: 100rpx;
+  line-height: 80rpx; 
+  height: 80rpx;
+}

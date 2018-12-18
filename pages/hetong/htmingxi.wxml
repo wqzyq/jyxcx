@@ -28,7 +28,7 @@
   </view>
   <view wx:for="{{arrsjmx}}" wx:key="{{unique}}">
     <view class="tr bg-g">
-      <view class="td" data-htph="{{item.htph}}" bindtap='tomingxi'>
+      <view class="td" data-htph="{{item.htph}}" data-finterid="{{item.finterid}}" data-fentryid="{{item.fentryid}}"bindtap='tomingxi'>
         <text> {{item.khmc}}</text>
       </view>
       <view class="td">

@@ -1,0 +1,9 @@
+<!--pages/shoukuan/shoukuan.wxml-->
+<view class="head">收款管理</view>
+<form bindsubmit="formSubmit" >
+ <input name='khmc' type='text'  placeholder="请输入客户名称" bindinput='phinput'></input>
+ <view class='line'></view>
+ <input name='je' type='number' placeholder="请输入收款金额"></input>
+  <view class='line'></view>
+  <button formType="submit">提交数据</button>
+</form>

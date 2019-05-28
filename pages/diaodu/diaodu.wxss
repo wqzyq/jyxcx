@@ -1,4 +1,4 @@
-/* pages/hetong/hetong.wxss */
+/* pages/newadd/newadd.wxss */
 
 .head {
   width: 100%;
@@ -22,18 +22,21 @@
 }
 
 .vadd {
+  margin-left: 50rpx;
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 80rpx;
   line-height: 80rpx;
   font-size: 25prx;
-  text-align: center;
 }
 
 .vbtn {
+  margin-left: 10rpx;
   height: 60rpx;
-  line-height: 60rpx;  
+  line-height: 60rpx;
+  text-align: center;
+  width: 230rpx;
 }
 
 .txtinput {
@@ -42,13 +45,13 @@
   border: solid, black, 1rpx;
   height: 80rpx;
   line-height: 80rpx;
-  font-size: 25rpx;
+  font-size: 28rpx;
 }
 
 .txtkh {
   display: flex;
   flex-direction: row;
-  font-size: 35rpx;
+  font-size: 25rpx;
 }
 
 .line {
@@ -78,6 +81,7 @@
 .table {
   margin-top: 15rpx;
   border: 0px solid darkgray;
+  text-align: center;
 }
 
 .tr {
@@ -88,39 +92,34 @@
   align-items: center;
 }
 
-.radio-group {
-  margin-left: 70rpx;
-}
-
-.ravalue {
-  margin-left: 50rpx;
-}
-
-.td {
-  font-size: 35rpx;
-  width: 40%;
-  justify-content: center;
-  text-align: center;
-}
-
-.bg-w {
-  background: snow;
-}
-
-.bg-g {
-  background: #e6f3f9;
-}
-
 .th {
-  width: 40%;
+  width: 25%;
   justify-content: center;
   background: #36f;
   color: #fff;
   display: flex;
   height: 3rem;
   align-items: center;
-  font-size: 35rpx;
+  font-size: 28rpx;
   font-weight: bold;
+}
+
+.td {
+  margin-left: 10rpx;
+  font-size: 25rpx;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-w {
+  background: snow;
+  text-align: center;
+}
+
+.bg-g {
+  background: #e6f3f9;
+  text-align: center;
 }
 
 .txtPro {
@@ -128,18 +127,31 @@
   display: flex;
   flex-direction: row;
   font-size: 28rpx;
+  text-align: center;
 }
 
 .btnSelPro {
   margin-top: 25rpx;
 }
 
-.navadd {
-  width: 100%;
-  text-align: center;
+/*radio设置*/
+
+.radio-group {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
 }
 
-.txtbt {
-  width: 150rpx;
-  text-align: center;
+.radio {
+  margin-left: 15rpx;
+  font-size: 25rpx;
+}
+
+/*收款信息*/
+
+.txtsh {
+  margin-top: 15rpx;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
 }

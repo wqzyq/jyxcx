@@ -1,0 +1,72 @@
+<!--pages/newadd/newadd.wxml-->
+<view class="head">调度流程</view>
+<view class="content"></view>
+<view class="vadd">
+  <button class='vbtn' type="primary" bindtap='btnSubmit'>提交</button>
+  <button class='vbtn' type="warn" bindtap='btnCancel'>撤回</button>
+</view>
+<view class='line'></view>
+    <view class='txtkh'>
+      <input name='htph' type='text' value='2018122802' placeholder="请输入合同编号"></input>
+    </view>
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='khmc' type='text' value='新华粤石化' placeholder="客户名称"></input>
+    </view>
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='bzyq' type='text' value='100公斤' placeholder="包装要求"></input>
+    </view>
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='htqx' type='text' value='20181230' placeholder="合同期限"></input>
+    </view>
+    <!--收款信息-->
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='shdz' type='text' value='广东省茂名市油城四路' placeholder="收货地址"></input>
+    </view>
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='shr' type='text' value='张三' placeholder="收货人"></input>
+    </view>
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='shrdh' type='text' value='138286899991' placeholder="收货人电话"></input>
+    </view>
+
+    <view class='line'></view>
+    <view class='txtkh'>
+      <input name='bz' type='text' value='准时发货' placeholder="备注"></input>
+    </view>   
+
+     <view class='line'></view>
+    <view class='txtkh'>
+      <input name='bz' type='text' value='发货' placeholder="发货情况"></input>
+    </view>  
+
+        
+<!--产品显示-->
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">产品</view>
+    <view class="th">规格</view>
+    <view class="th">开单</view>
+    <view class="th">实际</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{PrName}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view class="td">{{item.Number}}</view>
+      <view class="td"><input class='txtPro' type="digit" placeholder="发货数量"></input></view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.PrName}}</view>
+      <view class="td">{{item.Model}}</view>
+      <view class="td">{{item.Number}}</view>
+      <view class="td"><input class='txtPro' type="digit" placeholder="实际数量"></input></view>
+    </view>
+  </block>
+</view>
+<view class='line'></view>

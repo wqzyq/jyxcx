@@ -28,24 +28,24 @@ Page({
       },
       {
         name: '财务',
-        url: '/pages/caiwu/caiwumx',
+        url: '/pages/caiwu/shoukuan',
         icon: '../../imgs/chediao.png',
         code: '11'
       },
       {
-        name: '车调',
-        url: '/pages/carsel/carsel',
+        name: '调度',
+        url: '/pages/diaodu/diaodu',
         icon: '../../imgs/test1.png',
         code: '10'
       },
       {
-        name: '发货',
-        url: '/pages/send/send',
+        name: '排车',
+        url: '/pages/carsel/carsel',
         icon: '../../imgs/fahuo.png',
         code: '11'
       },
       {
-        name: '执行',
+        name: '发货',
         url: '/pages/send/send',
         icon: '../../imgs/zhixing.png',
         code: '10'
